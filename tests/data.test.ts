@@ -182,6 +182,6 @@ describe('parsers de fuentes', () => {
   it('leadingNumber lee valores con incertidumbre y espacios finos', () => {
     expect(leadingNumber('55.845(2)')).toBe(55.845);
     expect(leadingNumber('1.0080 ± 0.0002')).toBe(1.008);
-    expect(leadingNumber('4.002 602(2)')).toBe(4.002602);
+    expect(leadingNumber('4.002\u00a0602(2)')).toBe(4.002602);
   });
 });

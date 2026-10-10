@@ -28,3 +28,29 @@ initRouter();
 void loadBundle(initialLang()).then((bundle) => {
   store.set({ bundle });
 });
+
+// Secciones de abajo: su código se descarga cuando están por entrar en pantalla.
+const lazySections: Record<string, () => Promise<void>> = {
+  tendencias: () =>
+    import('./features/trends.ts').then((m) => {
+      m.initTrends();
+    }),
+  'masa-molar': () =>
+    import('./features/calculator.ts').then((m) => {
+      m.initCalculator();
+    }),
+};
+const io = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      io.unobserve(entry.target);
+      void lazySections[entry.target.id]?.();
+    }
+  },
+  { rootMargin: '600px 0px' },
+);
+for (const id of Object.keys(lazySections)) {
+  const section = document.getElementById(id);
+  if (section) io.observe(section);
+}

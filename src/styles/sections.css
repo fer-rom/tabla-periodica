@@ -157,3 +157,190 @@
   color: var(--ink-2);
   font-size: 1.0625rem;
 }
+
+/* ───────────── Tendencias ───────────── */
+
+.trends-tabs {
+  margin-block: 1.5rem 1.25rem;
+  flex-wrap: wrap;
+}
+.trend {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .trend {
+    grid-template-columns: 1fr;
+  }
+}
+.trend-figure {
+  min-width: 0;
+}
+.mini {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.mini text {
+  font-size: 9px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mini-arrow {
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+.trend-text {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+  max-width: 60ch;
+}
+.trend-dir {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ───────────── Calculadora ───────────── */
+
+.calc {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  max-width: 52rem;
+}
+.calc-label {
+  font-weight: 700;
+}
+.formula-input {
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 1rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-ui);
+  background: var(--paper-2);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+.formula-input[aria-invalid='true'] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.examples-label {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  margin-inline-end: 0.25rem;
+}
+.examples .chip sub {
+  font-size: 0.7em;
+}
+.calc-out {
+  min-height: 6rem;
+}
+.calc-empty {
+  color: var(--ink-2);
+}
+.calc-formula {
+  font-size: 1.25rem;
+}
+.calc-mass {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-block: 0.25rem;
+}
+.calc-mass-label {
+  color: var(--ink-2);
+}
+.calc-mass strong {
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.calc-hill {
+  color: var(--ink-2);
+}
+.calc-note {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--accent);
+  background: var(--paper-2);
+  max-width: 62ch;
+}
+.breakdown {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+.breakdown th,
+.breakdown td {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: start;
+}
+.breakdown thead th {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.breakdown tbody th {
+  font-weight: 400;
+}
+.breakdown td:nth-child(2),
+.breakdown td:nth-child(3),
+.breakdown th:nth-child(2),
+.breakdown th:nth-child(3) {
+  text-align: end;
+}
+.pct {
+  position: relative;
+  width: 40%;
+}
+.pct-bar {
+  position: absolute;
+  inset: 0.45rem 0 0.45rem 0;
+  border-radius: 3px;
+  background: var(--cat-bg, var(--paper-3));
+  box-shadow: inset 0 -2px 0 var(--cat-edge, var(--rule-strong));
+  transform: scaleX(var(--p));
+  transform-origin: left center;
+  transition: transform var(--dur) var(--ease-out);
+}
+.pct span:last-child {
+  position: relative;
+  padding-inline-start: 0.5rem;
+}
+.linklike {
+  padding: 0.2rem 0;
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  min-height: 1.5rem;
+}
+.calc-error p:last-child {
+  max-width: 62ch;
+}
+.calc-marked {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+.calc-marked mark {
+  background: transparent;
+  color: var(--accent);
+  text-decoration: underline wavy var(--accent);
+  text-underline-offset: 0.2em;
+}
