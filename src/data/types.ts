@@ -41,6 +41,9 @@ export interface Isotope {
   readonly mass: number | null;
   /** Fracción molar natural (0–1). `null` si no tiene abundancia natural representativa. */
   readonly abundance: number | null;
+  readonly stable: boolean;
+  /** Período de semidesintegración en segundos (`null` si es estable o no se conoce). */
+  readonly halfLife: number | null;
 }
 
 /** Datos numéricos e invariantes por idioma. */
@@ -83,6 +86,8 @@ export interface Element {
   readonly oxidationStates: readonly number[];
   /** Estado a 298 K y 1 atm. `null` si no se conoce experimentalmente. */
   readonly phase: Phase | null;
+  /** Estado predicho teóricamente cuando no hay dato experimental. */
+  readonly predictedPhase: Phase | null;
   /** Punto de fusión (K). */
   readonly meltingPoint: number | null;
   /** Punto de ebullición (K). Para elementos que subliman, temperatura de sublimación. */
@@ -94,8 +99,6 @@ export interface Element {
   /** Año de descubrimiento. `null` si se conoce desde la antigüedad o no está registrado. */
   readonly year: number | null;
   readonly antiquity: boolean;
-  /** Descubridor/es (nombres propios, no se traducen). */
-  readonly discoverers: string | null;
   readonly isotopes: readonly Isotope[];
   /** Abundancia en la corteza terrestre (mg/kg). */
   readonly crustAbundance: number | null;
@@ -104,6 +107,10 @@ export interface Element {
 /** Textos por idioma, en archivos separados para cargar solo el idioma activo. */
 export interface ElementText {
   readonly name: string;
+  /** Variantes aceptadas para la búsqueda (p. ej. «tungsteno», «cinc»). */
+  readonly aliases: readonly string[];
+  /** Descubridor/es o institución (los nombres de instituciones se traducen). */
+  readonly discoverers: string | null;
   readonly uses: string | null;
   readonly fact: string | null;
 }

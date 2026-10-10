@@ -1,0 +1,31 @@
+name: Lockfile
+
+# Genera package-lock.json cuando cambian las dependencias, para que CI use `npm ci`.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [package.json]
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --package-lock-only --no-audit --no-fund
+      - name: Commitear lockfile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          if git diff --cached --quiet; then echo "Lockfile al día."; else
+            git commit -m "chore: actualizar package-lock.json"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,474 @@
+{
+ "1": {
+  "uses": "Producción de amoníaco (proceso Haber-Bosch), refinación de petróleo, hidrogenación de aceites y combustible para cohetes.",
+  "fact": "Es el elemento más abundante del universo: cerca de tres cuartas partes de la masa de la materia ordinaria."
+ },
+ "2": {
+  "uses": "Globos y dirigibles, refrigeración de imanes superconductores (resonancia magnética), mezclas de gases para buceo y soldadura.",
+  "fact": "Se detectó en el espectro del Sol en 1868, antes de encontrarse en la Tierra; su nombre viene del griego helios, «sol»."
+ },
+ "3": {
+  "uses": "Baterías de ion-litio, vidrios y cerámicas especiales, grasas lubricantes y medicamentos estabilizadores del ánimo.",
+  "fact": "Es el metal menos denso que existe: flota en el agua."
+ },
+ "4": {
+  "uses": "Ventanas transparentes a los rayos X, aleaciones de cobre-berilio que no producen chispas y espejos de telescopios espaciales.",
+  "fact": "Los espejos del telescopio espacial James Webb son de berilio recubierto con una fina capa de oro."
+ },
+ "5": {
+  "uses": "Vidrio de borosilicato resistente al calor, barras de control de reactores nucleares (boro-10), fibras livianas y detergentes (bórax).",
+  "fact": "Sus compuestos tiñen de verde las llamas de los fuegos artificiales y las bengalas."
+ },
+ "6": {
+  "uses": "Acero (aleación de hierro y carbono), grafito en lápices y baterías, diamantes industriales, fibra de carbono y combustibles.",
+  "fact": "El diamante y el grafito son carbono puro: solo cambia cómo se ordenan sus átomos."
+ },
+ "7": {
+  "uses": "Amoníaco para fertilizantes y explosivos, atmósfera inerte en la industria alimentaria y electrónica, y nitrógeno líquido como refrigerante.",
+  "fact": "Forma alrededor del 78 % del aire que respiramos, medido en volumen."
+ },
+ "8": {
+  "uses": "Fabricación de acero, soldadura oxiacetilénica, oxígeno medicinal y, junto con hidrógeno líquido, propulsión de cohetes.",
+  "fact": "Es el elemento más abundante de la corteza terrestre: casi la mitad de su masa."
+ },
+ "9": {
+  "uses": "Pastas dentales y agua fluorada contra las caries, teflón, refrigerantes y enriquecimiento de uranio (UF₆).",
+  "fact": "Es el elemento más electronegativo de todos y uno de los más reactivos: ataca incluso al vidrio."
+ },
+ "10": {
+  "uses": "Carteles luminosos, láseres de helio-neón, indicadores de alto voltaje y refrigeración criogénica.",
+  "fact": "Es tan inerte que no se conoce ningún compuesto estable de neón."
+ },
+ "11": {
+  "uses": "Sal de mesa, bicarbonato y soda cáustica; lámparas de vapor de sodio para alumbrado público y refrigerante de reactores nucleares.",
+  "fact": "Es un metal tan blando que se corta con un cuchillo, y reacciona violentamente con el agua."
+ },
+ "12": {
+  "uses": "Aleaciones livianas con aluminio para autos y aviones, bengalas y fuegos artificiales, antiácidos y suplementos.",
+  "fact": "Cada molécula de clorofila tiene un átomo de magnesio en su centro."
+ },
+ "13": {
+  "uses": "Latas, papel de aluminio, aviones, construcción, cables eléctricos de alta tensión y utensilios de cocina.",
+  "fact": "Fue un metal precioso, más caro que la plata, hasta que en 1886 el proceso Hall-Héroult abarató su producción."
+ },
+ "14": {
+  "uses": "Chips y paneles solares (silicio de alta pureza), vidrio, cemento, cerámicas y siliconas.",
+  "fact": "Silicon Valley, el polo tecnológico de California, debe su nombre a este elemento."
+ },
+ "15": {
+  "uses": "Fertilizantes, fósforos de seguridad, detergentes y aditivos alimentarios; es parte del ADN y de los huesos.",
+  "fact": "Hennig Brand lo obtuvo en 1669 a partir de orina: es el primer elemento cuyo descubridor se conoce."
+ },
+ "16": {
+  "uses": "Producción de ácido sulfúrico, vulcanización del caucho, fertilizantes, fungicidas y pólvora.",
+  "fact": "El olor a «huevo podrido» no es del azufre puro, sino del sulfuro de hidrógeno (H₂S)."
+ },
+ "17": {
+  "uses": "Potabilización del agua y piscinas, PVC, lavandina y blanqueadores, y síntesis de medicamentos.",
+  "fact": "Con el sodio forma la sal de mesa, aunque por separado ambos elementos son peligrosos."
+ },
+ "18": {
+  "uses": "Atmósfera inerte para soldadura, lámparas incandescentes y fluorescentes, y fabricación de semiconductores.",
+  "fact": "Es el tercer gas más abundante del aire; su nombre significa «perezoso» en griego."
+ },
+ "19": {
+  "uses": "Fertilizantes (cloruro de potasio), jabones, vidrio y sustitutos de la sal.",
+  "fact": "Es imprescindible para el funcionamiento de nervios y músculos."
+ },
+ "20": {
+  "uses": "Cemento, cal y yeso; refinación de metales y suplementos dietarios.",
+  "fact": "Es el metal más abundante del cuerpo humano: forma parte de huesos y dientes."
+ },
+ "21": {
+  "uses": "Aleaciones de aluminio y escandio para cuadros de bicicleta y equipamiento deportivo, y lámparas de halogenuros metálicos.",
+  "fact": "Mendeléyev predijo su existencia como «eka-boro» antes de que se descubriera en 1879."
+ },
+ "22": {
+  "uses": "Aviones, implantes y prótesis médicas, y dióxido de titanio como pigmento blanco en pinturas y protectores solares.",
+  "fact": "Es tan resistente como el acero, pero pesa alrededor de un 40 % menos."
+ },
+ "23": {
+  "uses": "Aditivo del acero (ferrovanadio) para herramientas y resortes, y catalizador en la producción de ácido sulfúrico.",
+  "fact": "Debe su nombre a Vanadís, diosa nórdica de la belleza, por los vivos colores de sus compuestos."
+ },
+ "24": {
+  "uses": "Acero inoxidable, cromado de piezas, pigmentos y curtido de cueros.",
+  "fact": "El rojo de los rubíes y el verde de las esmeraldas se deben a pequeñas cantidades de cromo."
+ },
+ "25": {
+  "uses": "Producción de acero (casi el 90 % del manganeso), pilas alcalinas y aleaciones de aluminio.",
+  "fact": "El dióxido de manganeso ya se usaba como pigmento negro en pinturas rupestres prehistóricas."
+ },
+ "26": {
+  "uses": "Acero para construcción, autos, herramientas y maquinaria: es el metal más usado del mundo.",
+  "fact": "La hemoglobina usa hierro para transportar el oxígeno en la sangre."
+ },
+ "27": {
+  "uses": "Imanes permanentes (álnico), superaleaciones para turbinas, baterías de ion-litio y pigmentos azules.",
+  "fact": "El cobalto-60 se usa en radioterapia y para esterilizar material médico."
+ },
+ "28": {
+  "uses": "Acero inoxidable, monedas, baterías recargables y catalizador para hidrogenar aceites.",
+  "fact": "Junto con el hierro, forma la mayor parte del núcleo de la Tierra."
+ },
+ "29": {
+  "uses": "Cables eléctricos, cañerías, motores, monedas y aleaciones como el bronce y el latón.",
+  "fact": "El color verde de la Estatua de la Libertad es una pátina que se forma sobre su cobre."
+ },
+ "30": {
+  "uses": "Galvanizado del acero contra la corrosión, latón, pilas y protectores solares (óxido de zinc).",
+  "fact": "Es un nutriente esencial: más de 300 enzimas del cuerpo humano lo necesitan."
+ },
+ "31": {
+  "uses": "Semiconductores (arseniuro y nitruro de galio) para LEDs, láseres y paneles solares.",
+  "fact": "Funde a unos 30 °C: se derrite en la palma de la mano."
+ },
+ "32": {
+  "uses": "Fibra óptica, lentes infrarrojas para visión nocturna y electrónica; los primeros transistores eran de germanio.",
+  "fact": "Mendeléyev lo predijo como «eka-silicio» en 1871, quince años antes de su descubrimiento."
+ },
+ "33": {
+  "uses": "Semiconductores (arseniuro de galio), conservantes de madera y algunos medicamentos.",
+  "fact": "A presión normal no se funde: pasa directamente de sólido a gas (sublima)."
+ },
+ "34": {
+  "uses": "Celdas fotoeléctricas, decoloración del vidrio, fotocopiadoras y suplementos nutricionales.",
+  "fact": "Conduce mejor la electricidad cuanto más luz recibe, propiedad clave de las primeras fotocopiadoras."
+ },
+ "35": {
+  "uses": "Retardantes de llama, tratamiento de agua, fármacos y fluidos de perforación petrolera.",
+  "fact": "Es uno de los dos únicos elementos líquidos a temperatura ambiente; el otro es el mercurio."
+ },
+ "36": {
+  "uses": "Lámparas de alto rendimiento, flashes fotográficos de alta velocidad y láseres.",
+  "fact": "Entre 1960 y 1983 el metro se definió a partir de una línea espectral del kriptón-86."
+ },
+ "37": {
+  "uses": "Relojes atómicos, células fotoeléctricas, vidrios especiales e investigación en física cuántica.",
+  "fact": "En 1995 se creó con rubidio el primer condensado de Bose-Einstein, un nuevo estado de la materia."
+ },
+ "38": {
+  "uses": "Fuegos artificiales y bengalas de color rojo, imanes de ferrita y pastas dentales para dientes sensibles.",
+  "fact": "Su nombre viene de Strontian, un pueblo de Escocia donde se encontró el mineral que lo contiene."
+ },
+ "39": {
+  "uses": "Fósforos rojos de pantallas y LEDs, láseres YAG y superconductores de alta temperatura.",
+  "fact": "Es uno de los cuatro elementos cuyo nombre proviene del pueblo sueco de Ytterby."
+ },
+ "40": {
+  "uses": "Revestimiento del combustible en reactores nucleares, cerámicas, prótesis dentales y circonitas para joyería.",
+  "fact": "Absorbe muy pocos neutrones, por eso la industria nuclear consume casi el 90 % del circonio producido."
+ },
+ "41": {
+  "uses": "Imanes superconductores de niobio-titanio (resonancia magnética, aceleradores de partículas), aceros especiales y joyería.",
+  "fact": "En Estados Unidos se lo llamó «columbio» durante más de un siglo; IUPAC adoptó el nombre niobio en 1949."
+ },
+ "42": {
+  "uses": "Aceros de alta resistencia, catalizadores en refinerías y lubricantes de disulfuro de molibdeno.",
+  "fact": "Las bacterias que fijan nitrógeno en las raíces de las legumbres necesitan molibdeno en sus enzimas."
+ },
+ "43": {
+  "uses": "Diagnóstico médico por imágenes: el tecnecio-99m se usa en decenas de millones de estudios por año.",
+  "fact": "Fue el primer elemento obtenido artificialmente; su nombre viene del griego technetos, «artificial»."
+ },
+ "44": {
+  "uses": "Contactos eléctricos resistentes al desgaste, discos rígidos, catalizadores y aleaciones con platino.",
+  "fact": "Su nombre viene de Ruthenia, nombre latino de Rusia, donde se aisló a partir de mineral de platino de los Urales."
+ },
+ "45": {
+  "uses": "Catalizadores de autos que reducen óxidos de nitrógeno, espejos, reflectores y baño de joyería (rodiado).",
+  "fact": "Es uno de los metales más raros y caros del mundo."
+ },
+ "46": {
+  "uses": "Catalizadores de autos, electrónica, odontología y joyería (oro blanco).",
+  "fact": "A temperatura ambiente puede absorber hasta unas 900 veces su propio volumen de hidrógeno."
+ },
+ "47": {
+  "uses": "Joyería y platería, contactos eléctricos, espejos, paneles solares y apósitos antibacterianos.",
+  "fact": "Es el mejor conductor de la electricidad y del calor entre todos los metales."
+ },
+ "48": {
+  "uses": "Baterías de níquel-cadmio (hoy en retirada), pigmentos amarillos y rojos, y recubrimientos anticorrosión.",
+  "fact": "Es muy tóxico: la contaminación con cadmio causó la enfermedad itai-itai en Japón en el siglo XX."
+ },
+ "49": {
+  "uses": "Pantallas táctiles y LCD (óxido de indio y estaño), soldaduras de bajo punto de fusión y semiconductores.",
+  "fact": "Su nombre viene de la intensa línea color índigo de su espectro."
+ },
+ "50": {
+  "uses": "Hojalata para latas, soldaduras electrónicas, bronce (con cobre) y fabricación de vidrio plano.",
+  "fact": "Al doblar una barra de estaño se oye un crujido característico, conocido como «grito del estaño»."
+ },
+ "51": {
+  "uses": "Retardantes de llama, aleaciones de plomo para baterías y semiconductores.",
+  "fact": "En el antiguo Egipto se usaba sulfuro de antimonio como maquillaje negro para los ojos."
+ },
+ "52": {
+  "uses": "Paneles solares de telururo de cadmio, aleaciones de acero y cobre, y dispositivos termoeléctricos.",
+  "fact": "Es más escaso que el oro en la corteza terrestre, y quien lo manipula puede quedar con aliento a ajo."
+ },
+ "53": {
+  "uses": "Antisépticos, sal yodada, medios de contraste para rayos X y medicina tiroidea.",
+  "fact": "Sus cristales oscuros desprenden al calentarse un vapor violeta; su nombre significa «violeta» en griego."
+ },
+ "54": {
+  "uses": "Faros de autos, flashes, propulsores iónicos de satélites y anestesia general.",
+  "fact": "En 1962 fue el primer gas noble con el que se logró formar un compuesto químico."
+ },
+ "55": {
+  "uses": "Relojes atómicos, fluidos de perforación petrolera y células fotoeléctricas.",
+  "fact": "El segundo del Sistema Internacional se define a partir de una transición del átomo de cesio-133."
+ },
+ "56": {
+  "uses": "Contraste para radiografías del aparato digestivo, fuegos artificiales verdes y fluidos de perforación.",
+  "fact": "El sulfato de bario es tan insoluble que puede tragarse sin riesgo para ver el estómago en rayos X."
+ },
+ "57": {
+  "uses": "Lentes de cámaras, baterías de níquel-hidruro metálico de autos híbridos y catalizadores de refinería.",
+  "fact": "Da nombre a la serie de los lantánidos; viene del griego lanthanein, «estar oculto»."
+ },
+ "58": {
+  "uses": "Catalizadores de autos, pulido de vidrio y piedras de encendedor (ferrocerio).",
+  "fact": "Es el más abundante de los lantánidos en la corteza terrestre."
+ },
+ "59": {
+  "uses": "Imanes potentes junto con neodimio, anteojos protectores para soldadores y vidrios amarillos.",
+  "fact": "Su nombre significa «gemelo verde»: se separó de su «gemelo», el neodimio, en 1885."
+ },
+ "60": {
+  "uses": "Imanes de neodimio para motores eléctricos, auriculares, discos rígidos y aerogeneradores; láseres.",
+  "fact": "Los imanes de neodimio son los imanes permanentes más fuertes que se fabrican."
+ },
+ "61": {
+  "uses": "Pinturas luminosas, baterías nucleares de larga duración e instrumentos que miden espesores.",
+  "fact": "Todos sus isótopos son radiactivos: en la corteza terrestre solo hay trazas ínfimas."
+ },
+ "62": {
+  "uses": "Imanes de samario-cobalto resistentes al calor y tratamiento del dolor óseo en pacientes con cáncer.",
+  "fact": "Su nombre viene del mineral samarskita, que a su vez homenajea al ingeniero ruso Vasili Samarski-Bykhovets."
+ },
+ "63": {
+  "uses": "Fósforos rojos y azules de pantallas y lámparas, y marcas de seguridad que brillan bajo luz ultravioleta.",
+  "fact": "Los billetes de euro contienen compuestos luminiscentes de europio como medida contra la falsificación."
+ },
+ "64": {
+  "uses": "Agentes de contraste para resonancia magnética, barras de control nucleares y dispositivos de memoria.",
+  "fact": "Es magnético como el hierro solo por debajo de unos 20 °C: un día caluroso le quita el magnetismo."
+ },
+ "65": {
+  "uses": "Fósforos verdes de pantallas, imanes de motores eléctricos y materiales que cambian de forma en un campo magnético.",
+  "fact": "Es otro de los cuatro elementos bautizados por el pueblo sueco de Ytterby."
+ },
+ "66": {
+  "uses": "Imanes de neodimio para altas temperaturas en autos eléctricos y aerogeneradores, láseres y lámparas.",
+  "fact": "Su nombre significa «difícil de conseguir» en griego, por lo laborioso que fue aislarlo."
+ },
+ "67": {
+  "uses": "Láseres médicos de holmio, piezas polares de imanes muy intensos y calibración de espectrofotómetros.",
+  "fact": "Su nombre viene de Holmia, nombre latino de Estocolmo."
+ },
+ "68": {
+  "uses": "Amplificadores de fibra óptica, láseres dermatológicos y vidrios de color rosado.",
+  "fact": "Los amplificadores dopados con erbio permiten que internet cruce los océanos por cables de fibra óptica."
+ },
+ "69": {
+  "uses": "Equipos portátiles de rayos X y láseres quirúrgicos.",
+  "fact": "Es uno de los lantánidos más escasos; su nombre viene de Thule, el nombre mítico del extremo norte."
+ },
+ "70": {
+  "uses": "Relojes atómicos ópticos, láseres industriales y aditivo de aceros inoxidables.",
+  "fact": "Los relojes ópticos de iterbio están entre los instrumentos más precisos jamás construidos."
+ },
+ "71": {
+  "uses": "Detectores para tomografía PET, catalizadores de refinería y tratamiento de tumores con lutecio-177.",
+  "fact": "Su nombre viene de Lutetia, el nombre latino de París."
+ },
+ "72": {
+  "uses": "Barras de control nucleares, superaleaciones para turbinas y aislantes en chips modernos.",
+  "fact": "Su nombre viene de Hafnia, nombre latino de Copenhague, ciudad donde fue descubierto."
+ },
+ "73": {
+  "uses": "Condensadores de celulares y computadoras, implantes quirúrgicos y equipos para la industria química.",
+  "fact": "Debe su nombre a Tántalo, personaje de la mitología griega, porque casi no reacciona con los ácidos."
+ },
+ "74": {
+  "uses": "Filamentos de lámparas incandescentes, herramientas de corte de carburo de tungsteno y contrapesos.",
+  "fact": "Tiene el punto de fusión más alto de todos los metales: unos 3400 °C."
+ },
+ "75": {
+  "uses": "Superaleaciones para turbinas de aviones y catalizadores para producir naftas de alto octanaje.",
+  "fact": "Fue el último elemento natural no radiactivo en descubrirse, en 1925."
+ },
+ "76": {
+  "uses": "Puntas de lapiceras, contactos eléctricos y aleaciones muy duras.",
+  "fact": "Es el elemento más denso de la tabla: un litro de osmio pesaría más de 22 kilos."
+ },
+ "77": {
+  "uses": "Bujías de larga duración, crisoles para altas temperaturas y aleaciones con platino.",
+  "fact": "Una capa rica en iridio de hace 66 millones de años respalda la hipótesis del asteroide que extinguió a los dinosaurios."
+ },
+ "78": {
+  "uses": "Catalizadores de autos, joyería, sensores y medicamentos contra el cáncer como el cisplatino.",
+  "fact": "Hasta 2019, el kilogramo se definía con un cilindro de platino e iridio guardado cerca de París."
+ },
+ "79": {
+  "uses": "Joyería, reservas monetarias, contactos electrónicos y odontología.",
+  "fact": "Es tan maleable que un solo gramo puede laminarse en una hoja de más de medio metro cuadrado."
+ },
+ "80": {
+  "uses": "Lámparas fluorescentes, interruptores e instrumentos científicos; su uso se restringe por su toxicidad.",
+  "fact": "Es el único metal líquido a temperatura ambiente."
+ },
+ "81": {
+  "uses": "Detectores infrarrojos, estudios de perfusión cardíaca (talio-201) y vidrios ópticos especiales.",
+  "fact": "Su nombre viene del griego thallos, «brote verde», por la línea verde brillante de su espectro."
+ },
+ "82": {
+  "uses": "Baterías de autos, blindaje contra rayos X y radiación, y contrapesos; se abandonó en naftas y pinturas por su toxicidad.",
+  "fact": "El símbolo Pb viene del latín plumbum, de donde también deriva la palabra «plomero»."
+ },
+ "83": {
+  "uses": "Medicamentos para el estómago, cosméticos y reemplazo no tóxico del plomo en aleaciones y municiones.",
+  "fact": "Es levemente radiactivo, pero su vida media es más de mil millones de veces la edad del universo."
+ },
+ "84": {
+  "uses": "Eliminadores de electricidad estática en la industria y, en el pasado, fuentes de calor en satélites.",
+  "fact": "Marie Curie lo bautizó en honor a Polonia, su país natal."
+ },
+ "85": {
+  "uses": "Investigación en terapias contra el cáncer con astato-211.",
+  "fact": "Nunca se ha visto una muestra macroscópica: se vaporizaría por el calor de su propia radiactividad."
+ },
+ "86": {
+  "uses": "Investigación geológica y, en el pasado, radioterapia; hoy se mide en viviendas por razones de salud.",
+  "fact": "Acumulado en sótanos y viviendas, es la segunda causa de cáncer de pulmón después del tabaco."
+ },
+ "87": {
+  "uses": "Solo investigación científica: es tan inestable que nunca se reunió una cantidad visible.",
+  "fact": "Marguerite Perey lo descubrió en 1939: fue el último elemento hallado en la naturaleza."
+ },
+ "88": {
+  "uses": "Tratamiento del cáncer de próstata con radio-223; antes se usaba en pinturas luminosas.",
+  "fact": "En el siglo XX se pintaban relojes con radio, y muchas obreras que lo manipulaban enfermaron gravemente."
+ },
+ "89": {
+  "uses": "Fuentes de neutrones y terapia dirigida contra el cáncer con actinio-225.",
+  "fact": "Brilla con un resplandor azulado en la oscuridad por su intensa radiactividad."
+ },
+ "90": {
+  "uses": "Electrodos de soldadura, aleaciones de magnesio y posible combustible para reactores nucleares.",
+  "fact": "Su nombre viene de Thor, el dios nórdico del trueno."
+ },
+ "91": {
+  "uses": "Solo investigación científica.",
+  "fact": "Es uno de los elementos naturales más escasos y difíciles de aislar."
+ },
+ "92": {
+  "uses": "Combustible de centrales nucleares; el uranio empobrecido se usa en blindajes y contrapesos.",
+  "fact": "La vida media del uranio-238 es de unos 4500 millones de años, casi la edad de la Tierra."
+ },
+ "93": {
+  "uses": "Detectores de neutrones y producción de plutonio-238.",
+  "fact": "Fue nombrado por el planeta Neptuno, el siguiente después de Urano."
+ },
+ "94": {
+  "uses": "Combustible nuclear y generadores de plutonio-238 para sondas espaciales.",
+  "fact": "Las sondas Voyager siguen enviando datos gracias al calor de su plutonio-238."
+ },
+ "95": {
+  "uses": "Detectores de humo iónicos (americio-241) y fuentes de radiación para medidores industriales.",
+  "fact": "Probablemente haya americio en tu casa: está en muchos detectores de humo."
+ },
+ "96": {
+  "uses": "Fuentes de partículas alfa para espectrómetros, como los de los rovers que exploran Marte.",
+  "fact": "Su nombre honra a Marie y Pierre Curie."
+ },
+ "97": {
+  "uses": "Investigación y producción de elementos más pesados, como el teneso.",
+  "fact": "Su nombre homenajea a Berkeley, la ciudad californiana donde fue sintetizado."
+ },
+ "98": {
+  "uses": "Fuentes de neutrones para arrancar reactores, detectar oro y petróleo y tratar algunos tumores.",
+  "fact": "Un solo microgramo de californio-252 emite millones de neutrones por segundo."
+ },
+ "99": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "100": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "101": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "102": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "103": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "104": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "105": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "106": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "107": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "108": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "109": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "110": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "111": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "112": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "113": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "114": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "115": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "116": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "117": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ },
+ "118": {
+  "uses": "Solo investigación científica.",
+  "fact": "Scientific research only."
+ }
+}

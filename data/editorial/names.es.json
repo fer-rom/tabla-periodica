@@ -1,0 +1,492 @@
+{
+ "1": {
+  "es": "Hidrógeno",
+  "aliases": []
+ },
+ "2": {
+  "es": "Helio",
+  "aliases": []
+ },
+ "3": {
+  "es": "Litio",
+  "aliases": []
+ },
+ "4": {
+  "es": "Berilio",
+  "aliases": []
+ },
+ "5": {
+  "es": "Boro",
+  "aliases": []
+ },
+ "6": {
+  "es": "Carbono",
+  "aliases": []
+ },
+ "7": {
+  "es": "Nitrógeno",
+  "aliases": []
+ },
+ "8": {
+  "es": "Oxígeno",
+  "aliases": []
+ },
+ "9": {
+  "es": "Flúor",
+  "aliases": []
+ },
+ "10": {
+  "es": "Neón",
+  "aliases": []
+ },
+ "11": {
+  "es": "Sodio",
+  "aliases": []
+ },
+ "12": {
+  "es": "Magnesio",
+  "aliases": []
+ },
+ "13": {
+  "es": "Aluminio",
+  "aliases": []
+ },
+ "14": {
+  "es": "Silicio",
+  "aliases": []
+ },
+ "15": {
+  "es": "Fósforo",
+  "aliases": []
+ },
+ "16": {
+  "es": "Azufre",
+  "aliases": []
+ },
+ "17": {
+  "es": "Cloro",
+  "aliases": []
+ },
+ "18": {
+  "es": "Argón",
+  "aliases": []
+ },
+ "19": {
+  "es": "Potasio",
+  "aliases": []
+ },
+ "20": {
+  "es": "Calcio",
+  "aliases": []
+ },
+ "21": {
+  "es": "Escandio",
+  "aliases": []
+ },
+ "22": {
+  "es": "Titanio",
+  "aliases": []
+ },
+ "23": {
+  "es": "Vanadio",
+  "aliases": []
+ },
+ "24": {
+  "es": "Cromo",
+  "aliases": []
+ },
+ "25": {
+  "es": "Manganeso",
+  "aliases": []
+ },
+ "26": {
+  "es": "Hierro",
+  "aliases": []
+ },
+ "27": {
+  "es": "Cobalto",
+  "aliases": []
+ },
+ "28": {
+  "es": "Níquel",
+  "aliases": []
+ },
+ "29": {
+  "es": "Cobre",
+  "aliases": []
+ },
+ "30": {
+  "es": "Zinc",
+  "aliases": [
+   "cinc"
+  ]
+ },
+ "31": {
+  "es": "Galio",
+  "aliases": []
+ },
+ "32": {
+  "es": "Germanio",
+  "aliases": []
+ },
+ "33": {
+  "es": "Arsénico",
+  "aliases": []
+ },
+ "34": {
+  "es": "Selenio",
+  "aliases": []
+ },
+ "35": {
+  "es": "Bromo",
+  "aliases": []
+ },
+ "36": {
+  "es": "Kriptón",
+  "aliases": [
+   "criptón"
+  ]
+ },
+ "37": {
+  "es": "Rubidio",
+  "aliases": []
+ },
+ "38": {
+  "es": "Estroncio",
+  "aliases": []
+ },
+ "39": {
+  "es": "Itrio",
+  "aliases": []
+ },
+ "40": {
+  "es": "Circonio",
+  "aliases": [
+   "zirconio"
+  ]
+ },
+ "41": {
+  "es": "Niobio",
+  "aliases": []
+ },
+ "42": {
+  "es": "Molibdeno",
+  "aliases": []
+ },
+ "43": {
+  "es": "Tecnecio",
+  "aliases": []
+ },
+ "44": {
+  "es": "Rutenio",
+  "aliases": []
+ },
+ "45": {
+  "es": "Rodio",
+  "aliases": []
+ },
+ "46": {
+  "es": "Paladio",
+  "aliases": []
+ },
+ "47": {
+  "es": "Plata",
+  "aliases": []
+ },
+ "48": {
+  "es": "Cadmio",
+  "aliases": []
+ },
+ "49": {
+  "es": "Indio",
+  "aliases": []
+ },
+ "50": {
+  "es": "Estaño",
+  "aliases": []
+ },
+ "51": {
+  "es": "Antimonio",
+  "aliases": []
+ },
+ "52": {
+  "es": "Telurio",
+  "aliases": [
+   "teluro"
+  ]
+ },
+ "53": {
+  "es": "Yodo",
+  "aliases": []
+ },
+ "54": {
+  "es": "Xenón",
+  "aliases": []
+ },
+ "55": {
+  "es": "Cesio",
+  "aliases": []
+ },
+ "56": {
+  "es": "Bario",
+  "aliases": []
+ },
+ "57": {
+  "es": "Lantano",
+  "aliases": []
+ },
+ "58": {
+  "es": "Cerio",
+  "aliases": []
+ },
+ "59": {
+  "es": "Praseodimio",
+  "aliases": []
+ },
+ "60": {
+  "es": "Neodimio",
+  "aliases": []
+ },
+ "61": {
+  "es": "Prometio",
+  "aliases": []
+ },
+ "62": {
+  "es": "Samario",
+  "aliases": []
+ },
+ "63": {
+  "es": "Europio",
+  "aliases": []
+ },
+ "64": {
+  "es": "Gadolinio",
+  "aliases": []
+ },
+ "65": {
+  "es": "Terbio",
+  "aliases": []
+ },
+ "66": {
+  "es": "Disprosio",
+  "aliases": []
+ },
+ "67": {
+  "es": "Holmio",
+  "aliases": []
+ },
+ "68": {
+  "es": "Erbio",
+  "aliases": []
+ },
+ "69": {
+  "es": "Tulio",
+  "aliases": []
+ },
+ "70": {
+  "es": "Iterbio",
+  "aliases": []
+ },
+ "71": {
+  "es": "Lutecio",
+  "aliases": []
+ },
+ "72": {
+  "es": "Hafnio",
+  "aliases": []
+ },
+ "73": {
+  "es": "Tantalio",
+  "aliases": [
+   "tántalo"
+  ]
+ },
+ "74": {
+  "es": "Wolframio",
+  "aliases": [
+   "tungsteno"
+  ]
+ },
+ "75": {
+  "es": "Renio",
+  "aliases": []
+ },
+ "76": {
+  "es": "Osmio",
+  "aliases": []
+ },
+ "77": {
+  "es": "Iridio",
+  "aliases": []
+ },
+ "78": {
+  "es": "Platino",
+  "aliases": []
+ },
+ "79": {
+  "es": "Oro",
+  "aliases": []
+ },
+ "80": {
+  "es": "Mercurio",
+  "aliases": []
+ },
+ "81": {
+  "es": "Talio",
+  "aliases": []
+ },
+ "82": {
+  "es": "Plomo",
+  "aliases": []
+ },
+ "83": {
+  "es": "Bismuto",
+  "aliases": []
+ },
+ "84": {
+  "es": "Polonio",
+  "aliases": []
+ },
+ "85": {
+  "es": "Astato",
+  "aliases": [
+   "ástato"
+  ]
+ },
+ "86": {
+  "es": "Radón",
+  "aliases": []
+ },
+ "87": {
+  "es": "Francio",
+  "aliases": []
+ },
+ "88": {
+  "es": "Radio",
+  "aliases": []
+ },
+ "89": {
+  "es": "Actinio",
+  "aliases": []
+ },
+ "90": {
+  "es": "Torio",
+  "aliases": []
+ },
+ "91": {
+  "es": "Protactinio",
+  "aliases": []
+ },
+ "92": {
+  "es": "Uranio",
+  "aliases": []
+ },
+ "93": {
+  "es": "Neptunio",
+  "aliases": []
+ },
+ "94": {
+  "es": "Plutonio",
+  "aliases": []
+ },
+ "95": {
+  "es": "Americio",
+  "aliases": []
+ },
+ "96": {
+  "es": "Curio",
+  "aliases": []
+ },
+ "97": {
+  "es": "Berkelio",
+  "aliases": []
+ },
+ "98": {
+  "es": "Californio",
+  "aliases": []
+ },
+ "99": {
+  "es": "Einstenio",
+  "aliases": []
+ },
+ "100": {
+  "es": "Fermio",
+  "aliases": []
+ },
+ "101": {
+  "es": "Mendelevio",
+  "aliases": []
+ },
+ "102": {
+  "es": "Nobelio",
+  "aliases": []
+ },
+ "103": {
+  "es": "Laurencio",
+  "aliases": [
+   "lawrencio"
+  ]
+ },
+ "104": {
+  "es": "Rutherfordio",
+  "aliases": []
+ },
+ "105": {
+  "es": "Dubnio",
+  "aliases": []
+ },
+ "106": {
+  "es": "Seaborgio",
+  "aliases": []
+ },
+ "107": {
+  "es": "Bohrio",
+  "aliases": []
+ },
+ "108": {
+  "es": "Hasio",
+  "aliases": []
+ },
+ "109": {
+  "es": "Meitnerio",
+  "aliases": []
+ },
+ "110": {
+  "es": "Darmstatio",
+  "aliases": [
+   "darmstadtio"
+  ]
+ },
+ "111": {
+  "es": "Roentgenio",
+  "aliases": []
+ },
+ "112": {
+  "es": "Copernicio",
+  "aliases": []
+ },
+ "113": {
+  "es": "Nihonio",
+  "aliases": []
+ },
+ "114": {
+  "es": "Flerovio",
+  "aliases": []
+ },
+ "115": {
+  "es": "Moscovio",
+  "aliases": []
+ },
+ "116": {
+  "es": "Livermorio",
+  "aliases": []
+ },
+ "117": {
+  "es": "Teneso",
+  "aliases": []
+ },
+ "118": {
+  "es": "Oganesón",
+  "aliases": []
+ }
+}
