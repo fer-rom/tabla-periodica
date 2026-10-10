@@ -5,7 +5,7 @@
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
-  padding-block: 0.25rem 0.75rem;
+  padding-block: 0 0.75rem;
   margin-inline: calc(-1 * clamp(12px, 3vw, 32px));
   padding-inline: clamp(12px, 3vw, 32px);
 }
