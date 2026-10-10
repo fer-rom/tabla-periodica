@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pubchem-periodictable",
+    "publisher": "PubChem (NIH/NCBI)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON",
+    "file": "pubchem-periodictable.json",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 44488,
+    "sha256": "ff0f75976583b8a6493b18d0b42e83e1b68bd6e112b45d33578d98494ed5d321"
+  },
+  {
+    "id": "nist-compositions",
+    "publisher": "NIST — Atomic Weights and Isotopic Compositions",
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=&ascii=ascii2&isotype=all",
+    "file": "nist-compositions.txt",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 568433,
+    "sha256": "abff3616d1e47efb0a659afe0426ec28a92a6f54b306592fc94ba96df2a45be8"
+  },
+  {
+    "id": "nist-ionization",
+    "publisher": "NIST Atomic Spectra Database — Ionization Energies",
+    "url": "https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=H-Og+I&submit=Retrieve+Data&units=1&format=2&order=0&at_num_out=on&sp_name_out=on&ion_charge_out=on&el_name_out=on&e_out=0&unc_out=on&biblio=on",
+    "file": "nist-ionization.csv",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 12114,
+    "sha256": "861d1dae3d286f244e0e54fa0a05998fbcd0b01ead387fdf783bdae90d002723"
+  },
+  {
+    "id": "ciaaw-abridged",
+    "publisher": "IUPAC CIAAW — Abridged standard atomic weights",
+    "url": "https://www.ciaaw.org/abridged-atomic-weights.htm",
+    "file": "ciaaw-abridged.html",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 18489,
+    "sha256": "f9e9554471749c55a624aec55151922470a7f4104c62811eb194fed9731b907d"
+  },
+  {
+    "id": "ciaaw-standard",
+    "publisher": "IUPAC CIAAW — Standard atomic weights",
+    "url": "https://www.ciaaw.org/atomic-weights.htm",
+    "file": "ciaaw-standard.html",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 21501,
+    "sha256": "b48282594b1fb01eee3cbc9d469ce5e3483b628157ea1b09ede33e3476895cf2"
+  },
+  {
+    "id": "pubchem-elements",
+    "publisher": "PubChem (NIH/NCBI) — PUG View element pages, flattened",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/{1..118}/JSON",
+    "file": "pubchem-elements.json.gz",
+    "retrieved": "2026-10-10T01:10:46.575Z",
+    "bytes": 475478,
+    "sha256": "5fa44f6a48235eeca95ba4a1992cab8305cf4a85cd2023d459d647add6f02b17"
+  }
+]
