@@ -76,7 +76,16 @@ function renderLegend(): DocumentFragment {
     });
     list.append(h('li', {}, btn));
   }
-  frag.append(list, h('p', { class: 'inset-hint' }, tr.t('legend.hint')));
+  frag.append(
+    list,
+    h('p', { class: 'inset-hint' }, tr.t('legend.hint')),
+    h(
+      'p',
+      { class: 'stair-note' },
+      h('span', { class: 'stair-swatch', 'aria-hidden': 'true' }),
+      tr.t('legend.divider'),
+    ),
+  );
   return frag;
 }
 

@@ -11,6 +11,15 @@ import { escapeHtml, formatMass } from './format.ts';
 export const cssRow = (y: number): number => y + 1;
 export const cssCol = (x: number): number => x + 1;
 
+/** Tramos de la línea escalonada: [columna, período, bordes] (l = izquierdo, b = inferior). */
+export const STAIR: readonly (readonly [number, number, readonly ('l' | 'b')[]])[] = [
+  [13, 2, ['l', 'b']],
+  [14, 3, ['l', 'b']],
+  [15, 4, ['l', 'b']],
+  [16, 5, ['l', 'b']],
+  [17, 6, ['l']],
+];
+
 export function cellLabel(tr: ReturnType<typeof createTranslator>, el: Element, name: string): string {
   return tr.t('grid.cellLabel', { name, symbol: el.symbol, z: el.z, category: tr.t(`categories.${el.category}`) });
 }
@@ -55,6 +64,16 @@ export function renderTable(elements: readonly Element[], texts: ElementTexts, m
   });
 
   out.push('</div>');
+
+  // Línea escalonada metales / no metales (B–Si–As–Te–At), como en las tablas impresas.
+  // Cada tramo es un ítem de la grilla en el área de una celda, con el trazo en su borde.
+  for (const [x, y, sides] of STAIR) {
+    for (const side of sides) {
+      out.push(
+        `<span class="stair stair-${side}" aria-hidden="true" style="grid-area:${cssRow(y)}/${cssCol(x)}"></span>`,
+      );
+    }
+  }
 
   // Marcadores de la fila f dentro del cuerpo principal.
   out.push(

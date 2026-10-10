@@ -67,7 +67,8 @@
     "noData": "No data",
     "antiquity": "Antiquity",
     "scaleMin": "min",
-    "scaleMax": "max"
+    "scaleMax": "max",
+    "divider": "The staircase line separates metals (left) from nonmetals (right). Metalloids sit along it."
   },
   "phases": {
     "solid": "Solid",

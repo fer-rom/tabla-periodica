@@ -67,7 +67,8 @@
     "noData": "Sin dato",
     "antiquity": "Antigüedad",
     "scaleMin": "mín.",
-    "scaleMax": "máx."
+    "scaleMax": "máx.",
+    "divider": "La línea escalonada separa los metales (a la izquierda) de los no metales (a la derecha). Los metaloides quedan sobre ella."
   },
   "phases": {
     "solid": "Sólido",
