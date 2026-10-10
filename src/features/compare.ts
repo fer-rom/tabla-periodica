@@ -189,7 +189,7 @@ function showComparison(za: number, zb: number): void {
   const head = (e: Element): HTMLElement =>
     h(
       'th',
-      { scope: 'col', 'data-cat': e.category },
+      { scope: 'col', 'data-cat': e.category, 'data-hydrogen': e.z === 1 ? '' : null },
       h('span', { class: 'tile tile-sm', 'aria-hidden': 'true' }, h('span', { class: 'sym' }, e.symbol)),
       h('span', { class: 'cmp-name' }, nameOf(e.z)),
     );

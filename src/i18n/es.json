@@ -68,7 +68,8 @@
     "antiquity": "Antigüedad",
     "scaleMin": "mín.",
     "scaleMax": "máx.",
-    "divider": "La línea escalonada separa los metales (a la izquierda) de los no metales (a la derecha). Los metaloides quedan sobre ella."
+    "divider": "La línea escalonada separa los metales (a la izquierda) de los no metales (a la derecha). Los metaloides quedan sobre ella.",
+    "hydrogen": "Hidrógeno (caso especial)"
   },
   "phases": {
     "solid": "Sólido",
@@ -256,5 +257,12 @@
     "noData": "—",
     "yes": "Sí",
     "no": "No"
+  },
+  "preview": {
+    "hint": "Tocá un elemento para ver un resumen acá. Tocalo de nuevo, o usá «Ver más…», para abrir la ficha completa.",
+    "more": "Ver más…",
+    "shells": "Distribución de electrones",
+    "configShort": "Configuración abreviada",
+    "label": "Resumen de {name}"
   }
 }

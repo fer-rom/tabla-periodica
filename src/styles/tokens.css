@@ -41,6 +41,7 @@
   --rule-strong: #9fb0a7;
   --accent: #b42318;
   --accent-ink: #ffffff;
+  --stair: #d61f1f;
   --scrim: rgb(23 33 29 / 0.42);
 
   /* Categorías: fondo de celda y trazo (barra inferior y glifo). */
@@ -77,6 +78,7 @@
   --rule-strong: #4d4766;
   --accent: #ff7b6b;
   --accent-ink: #1a0b09;
+  --stair: #ff5a4e;
   --scrim: rgb(5 4 10 / 0.6);
 
   --l-bg: 29%;
@@ -125,6 +127,33 @@
 [data-cat] {
   --cat-bg: oklch(var(--l-bg) var(--c-bg) var(--h));
   --cat-edge: oklch(var(--l-edge) var(--c-edge) var(--h));
+}
+
+/* El hidrógeno no encaja en ningún grupo: gris neutro y glifo propio (anillo). */
+[data-cat][data-hydrogen] {
+  --cat-bg: oklch(var(--l-bg) 0 0);
+  --cat-edge: oklch(calc(var(--l-edge) - 6%) 0 0);
+  --glyph: polygon(
+    evenodd,
+    30% 0,
+    70% 0,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0 70%,
+    0 30%,
+    30% 0,
+    38% 26%,
+    26% 38%,
+    26% 62%,
+    38% 74%,
+    62% 74%,
+    74% 62%,
+    74% 38%,
+    62% 26%,
+    38% 26%
+  );
 }
 
 /* Glifos por categoría (clip-path): la categoría se distingue sin color. */

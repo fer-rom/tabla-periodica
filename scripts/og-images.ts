@@ -38,20 +38,20 @@ function shell(fontUrl: string, body: string): string {
 html,body{width:1200px;height:630px}
 body{background:#13111c;color:#ece9f4;font-family:A,sans-serif;font-variant-numeric:tabular-nums;overflow:hidden;position:relative}
 .wrap{position:absolute;inset:64px 72px;display:flex;gap:64px;align-items:center}
-.tile{flex:none;width:380px;height:420px;border-radius:24px;padding:28px 34px;display:grid;grid-template-rows:auto 1fr auto;background:oklch(30% .07 var(--h));box-shadow:inset 0 -14px 0 oklch(74% .13 var(--h))}
+.tile{flex:none;width:380px;height:420px;border-radius:24px;padding:28px 34px;display:grid;grid-template-rows:auto 1fr auto;background:oklch(30% calc(var(--c,1) * .07) var(--h));box-shadow:inset 0 -14px 0 oklch(74% calc(var(--c,1) * .13) var(--h))}
 .z{font-size:44px;color:#c9c3dd}
 .sym{font-size:190px;font-weight:800;line-height:1;align-self:center;letter-spacing:-.02em}
 .mass{font-size:36px;color:#c9c3dd}
 .info{display:grid;gap:18px;min-width:0}
 .name{font-size:84px;font-weight:800;line-height:1.02;letter-spacing:-.015em}
-.cat{font-size:34px;color:oklch(80% .12 var(--h))}
+.cat{font-size:34px;color:oklch(80% calc(var(--c,1) * .12) var(--h))}
 .cfg{font-size:32px;color:#c9c3dd}
 .cfg sup{font-size:.62em;vertical-align:.7em;line-height:0}
 .brand{position:absolute;left:72px;bottom:40px;display:flex;align-items:center;gap:16px;font-size:28px;font-weight:700;color:#c9c3dd}
 .lines{position:absolute;right:72px;bottom:52px;display:flex;gap:10px;align-items:end}
 .lines i{display:block;width:6px;height:34px;border-radius:3px}
 .home{position:absolute;inset:60px 72px;display:grid;grid-template-columns:repeat(18,1fr);grid-auto-rows:44px;gap:5px;align-content:start}
-.home b{border-radius:6px;background:oklch(32% .07 var(--h));box-shadow:inset 0 -4px 0 oklch(72% .13 var(--h));font-size:17px;display:grid;place-items:center;font-weight:700}
+.home b{border-radius:6px;background:oklch(32% calc(var(--c,1) * .07) var(--h));box-shadow:inset 0 -4px 0 oklch(72% calc(var(--c,1) * .13) var(--h));font-size:17px;display:grid;place-items:center;font-weight:700}
 .title{position:absolute;left:72px;right:72px;bottom:110px;font-size:64px;font-weight:800;letter-spacing:-.015em}
 .sub{position:absolute;left:72px;bottom:62px;font-size:28px;color:#c9c3dd}
 </style></head><body>${body}</body></html>`;
@@ -61,7 +61,7 @@ function elementCard(el: Element, lang: Lang): string {
   const tr = createTranslator(lang, lang === 'es' ? es : en);
   const { name } = elementSummary(el, lang);
   const cfg = escapeHtml(el.electronConfigurationShort).replace(/(\d[spdf])(\d{1,2})/g, '$1<sup>$2</sup>');
-  return `<div class="wrap" style="--h:${HUE[el.category]}">
+  return `<div class="wrap" style="--h:${HUE[el.category]};${el.z === 1 ? '--c:0' : ''}">
   <div class="tile"><span class="z">${el.z}</span><span class="sym">${escapeHtml(el.symbol)}</span><span class="mass">${escapeHtml(formatMass(lang, el))}</span></div>
   <div class="info"><p class="name">${escapeHtml(name)}</p><p class="cat">${escapeHtml(tr.t(`categories.${el.category}`))}</p><p class="cfg">${cfg}</p></div>
 </div>
@@ -73,7 +73,10 @@ function homeCard(lang: Lang): string {
   const tr = createTranslator(lang, lang === 'es' ? es : en);
   const cells = elements
     .filter((e) => e.y <= 7)
-    .map((e) => `<b style="grid-column:${e.x};grid-row:${e.y};--h:${HUE[e.category]}">${escapeHtml(e.symbol)}</b>`)
+    .map(
+      (e) =>
+        `<b style="grid-column:${e.x};grid-row:${e.y};--h:${HUE[e.category]};${e.z === 1 ? '--c:0' : ''}">${escapeHtml(e.symbol)}</b>`,
+    )
     .join('');
   return `<div class="home">${cells}</div>
 <p class="title">${escapeHtml(tr.t('meta.title'))}</p>

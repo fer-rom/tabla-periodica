@@ -238,10 +238,10 @@ function render(z: number): void {
 
   const content = h(
     'div',
-    { class: 'sheet-body', 'data-cat': el.category },
+    { class: 'sheet-body', 'data-cat': el.category, 'data-hydrogen': el.z === 1 ? '' : null },
     h(
       'header',
-      { class: 'sheet-head', 'data-cat': el.category },
+      { class: 'sheet-head', 'data-cat': el.category, 'data-hydrogen': el.z === 1 ? '' : null },
       h(
         'div',
         { class: 'tile', 'aria-hidden': 'true' },

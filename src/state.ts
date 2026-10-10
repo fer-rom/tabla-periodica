@@ -22,6 +22,8 @@ export interface AppState {
   readonly highlight: Category | null;
   /** Elemento abierto en la ficha (Z) o null. */
   readonly selected: number | null;
+  /** Elemento resumido en la tarjeta del hueco central (vista de categorías). */
+  readonly preview: number | null;
   readonly compareMode: boolean;
   readonly compare: readonly number[];
   readonly fit: boolean;
@@ -40,6 +42,7 @@ export const store = createStore<AppState>({
   filters: NO_FILTERS,
   highlight: null,
   selected: null,
+  preview: null,
   compareMode: false,
   compare: [],
   fit: false,

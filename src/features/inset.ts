@@ -1,14 +1,16 @@
 /**
- * Contenido del hueco central de la tabla según la vista:
- * leyenda interactiva de categorías, escala del mapa de calor o slider de temperatura.
+ * Hueco central de la tabla según la vista: tarjeta resumen del elemento tocado (categorías),
+ * escala del mapa de calor o slider de temperatura. La leyenda va siempre debajo de la tabla.
  */
 import { CATEGORIES } from '../data/types.ts';
 import { blackbodyGradient, viridisGradient } from '../lib/color.ts';
 import { $, h } from '../lib/dom.ts';
+import { configToHtml, formatMass, formatOxidation, formatValue } from '../lib/format.ts';
 import { formatNumber } from '../i18n/index.ts';
 import { heatScale } from '../lib/heat.ts';
 import { phaseAt } from '../lib/phase.ts';
-import { elements, store, translator, type HeatProp } from '../state.ts';
+import { byZ, elements, nameOf, store, translator, type HeatProp } from '../state.ts';
+import { openElement } from './router.ts';
 
 export const T_MAX = 6000;
 
@@ -22,26 +24,43 @@ const UNIT_KEYS: Readonly<Record<HeatProp, Parameters<ReturnType<typeof translat
 };
 
 let root: HTMLElement;
+let legendRoot: HTMLElement;
 let slider: HTMLInputElement | null = null;
 let readout: HTMLElement | null = null;
 let counts: HTMLElement | null = null;
 
 export function initInset(): void {
   root = $('#inset');
+  legendRoot = $('#legend-area');
   const render = (): void => {
     if (!store.get().bundle) return;
     const view = store.get().view;
     root.dataset.view = view;
     root.replaceChildren(
       view === 'category'
-        ? renderLegend()
+        ? renderPreview(store.get().preview)
         : view === 'heatmap'
           ? renderScale(store.get().heatProp)
           : renderTemperature(),
     );
   };
+  const renderLegendArea = (): void => {
+    if (store.get().bundle) legendRoot.replaceChildren(renderLegend());
+  };
   store.select((s) => s.view, render);
-  store.select((s) => s.bundle, render);
+  store.select(
+    (s) => s.bundle,
+    () => {
+      render();
+      renderLegendArea();
+    },
+  );
+  store.select(
+    (s) => s.preview,
+    () => {
+      if (store.get().view === 'category') render();
+    },
+  );
   store.select(
     (s) => s.heatProp,
     () => {
@@ -51,7 +70,7 @@ export function initInset(): void {
   store.select(
     (s) => s.highlight,
     (hl) => {
-      for (const btn of root.querySelectorAll<HTMLButtonElement>('[data-hl]')) {
+      for (const btn of legendRoot.querySelectorAll<HTMLButtonElement>('[data-hl]')) {
         btn.setAttribute('aria-pressed', String(btn.dataset.hl === hl));
       }
     },
@@ -76,6 +95,14 @@ function renderLegend(): DocumentFragment {
     });
     list.append(h('li', {}, btn));
   }
+  list.append(
+    h(
+      'li',
+      { class: 'legend-static' },
+      h('span', { class: 'swatch', 'data-cat': 'nonmetal', 'data-hydrogen': '', 'aria-hidden': 'true' }),
+      tr.t('legend.hydrogen'),
+    ),
+  );
   frag.append(
     list,
     h('p', { class: 'inset-hint' }, tr.t('legend.hint')),
@@ -87,6 +114,59 @@ function renderLegend(): DocumentFragment {
     ),
   );
   return frag;
+}
+
+/** Tarjeta resumen: los datos más consultados, en renglones, y un botón a la ficha completa. */
+function renderPreview(z: number | null): HTMLElement {
+  const tr = translator();
+  const el = z === null ? undefined : byZ(z);
+  if (!el) return h('p', { class: 'preview-hint' }, tr.t('preview.hint'));
+  const name = nameOf(el.z);
+  const config = h('span');
+  config.innerHTML = configToHtml(el.electronConfigurationShort);
+  const row = (label: string, value: string | Node): HTMLElement =>
+    h('div', { class: 'pv-row' }, h('dt', {}, label), h('dd', {}, value));
+  const more = h('button', { type: 'button', class: 'btn pv-more' }, tr.t('preview.more'));
+  more.addEventListener('click', () => {
+    openElement(el.z);
+  });
+  return h(
+    'section',
+    {
+      class: 'preview',
+      'data-cat': el.category,
+      'data-hydrogen': el.z === 1 ? '' : null,
+      'aria-label': tr.t('preview.label', { name }),
+      'aria-live': 'polite',
+    },
+    h(
+      'div',
+      { class: 'pv-id' },
+      h(
+        'div',
+        { class: 'tile', 'aria-hidden': 'true' },
+        h('span', { class: 'z' }, String(el.z)),
+        h('span', { class: 'sym' }, el.symbol),
+      ),
+      h(
+        'div',
+        {},
+        h('h2', { class: 'pv-name' }, name),
+        h('p', { class: 'pv-cat' }, tr.t(`categories.${el.category}`)),
+        h('p', { class: 'pv-cat' }, formatMass(tr.lang, el)),
+      ),
+    ),
+    h(
+      'dl',
+      { class: 'pv-data' },
+      row(tr.t('properties.electronegativity'), formatValue(tr.lang, el.electronegativity)),
+      row(tr.t('panel.oxidationStates'), formatOxidation(el.oxidationStates)),
+      row(tr.t('preview.shells'), el.shells.join(', ')),
+      row(tr.t('properties.density'), formatValue(tr.lang, el.density, 'g/cm³')),
+      row(tr.t('preview.configShort'), config),
+    ),
+    more,
+  );
 }
 
 function renderScale(prop: HeatProp): HTMLElement {

@@ -17,7 +17,7 @@
   --cellh: calc(var(--cell) * 1.12);
   display: grid;
   grid-template-columns: var(--label) repeat(18, var(--cell));
-  grid-template-rows: auto repeat(7, var(--cellh)) calc(var(--cellh) * 0.3) repeat(2, var(--cellh)) auto;
+  grid-template-rows: auto repeat(7, var(--cellh)) calc(var(--cellh) * 0.3) repeat(2, var(--cellh)) auto auto;
   gap: var(--gap);
   width: max-content;
   margin-inline: auto;
@@ -201,7 +201,23 @@
   min-width: 0;
 }
 
+/* Leyenda: siempre debajo de la tabla, fija a la izquierda aunque la tabla se desplace. */
+.legend-area {
+  grid-column: 1 / -1;
+  grid-row: 13;
+  position: sticky;
+  left: 0;
+  width: min(100%, calc(100cqi - 2 * clamp(12px, 3vw, 32px)));
+  padding-top: 0.75rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
 @container table (max-width: 1079px) {
+  /* Sin hueco central: la tarjeta resumen no se usa (la ficha se abre directamente). */
+  .inset[data-view='category'] {
+    display: none;
+  }
   .inset {
     grid-area: 12 / 1 / span 1 / -1 !important;
     position: sticky;
@@ -276,19 +292,18 @@
 .stair::after {
   content: '';
   position: absolute;
-  background: var(--ink);
-  border-radius: 2px;
+  background: var(--stair);
 }
 /* El trazo va por el centro del hueco entre celdas y se prolonga para unir las esquinas. */
 .stair-l::after {
-  left: calc(var(--gap) / -2 - 1.5px);
-  top: calc(var(--gap) / -2 - 1.5px);
-  bottom: calc(var(--gap) / -2 - 1.5px);
-  width: 3px;
+  left: calc(var(--gap) / -2 - 1px);
+  top: calc(var(--gap) / -2 - 1px);
+  bottom: calc(var(--gap) / -2 - 1px);
+  width: 2px;
 }
 .stair-b::after {
-  bottom: calc(var(--gap) / -2 - 1.5px);
-  left: calc(var(--gap) / -2 - 1.5px);
-  right: calc(var(--gap) / -2 - 1.5px);
-  height: 3px;
+  bottom: calc(var(--gap) / -2 - 1px);
+  left: calc(var(--gap) / -2 - 1px);
+  right: calc(var(--gap) / -2 - 1px);
+  height: 2px;
 }

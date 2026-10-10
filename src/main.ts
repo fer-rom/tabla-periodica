@@ -14,11 +14,18 @@ import { initToolbar } from './features/toolbar.ts';
 import { initOffline } from './features/offline.ts';
 import { store } from './state.ts';
 
+/** La tarjeta resumen vive en el hueco central, que solo existe con la tabla a lo ancho. */
+const insetVisible = (): boolean => (document.getElementById('scroller')?.clientWidth ?? 0) >= 1080;
+
 initGrid((z) => {
-  if (store.get().compareMode) {
+  const s = store.get();
+  if (s.compareMode) {
     void import('./features/compare.ts').then((m) => {
       m.pick(z);
     });
+  } else if (s.view === 'category' && insetVisible() && s.preview !== z) {
+    // Primer toque: resumen en la tarjeta. Segundo toque sobre el mismo: ficha completa.
+    store.set({ preview: z });
   } else openElement(z);
 });
 initPrefs();

@@ -50,7 +50,7 @@ export function renderTable(elements: readonly Element[], texts: ElementTexts, m
       const name = texts[String(el.z)]?.name ?? el.symbol;
       const first = el.z === 1;
       out.push(
-        `<div role="gridcell" class="el" id="el-${el.z}" data-z="${el.z}" data-cat="${el.category}" data-block="${el.block}"` +
+        `<div role="gridcell" class="el" id="el-${el.z}" data-z="${el.z}" data-cat="${el.category}"${el.z === 1 ? ' data-hydrogen' : ''} data-block="${el.block}"` +
           ` aria-colindex="${el.x}" tabindex="${first ? 0 : -1}" aria-label="${escapeHtml(cellLabel(tr, el, name))}"` +
           ` style="grid-area:${cssRow(el.y)}/${cssCol(el.x)}">` +
           `<span class="z" aria-hidden="true">${el.z}</span>` +
@@ -81,8 +81,10 @@ export function renderTable(elements: readonly Element[], texts: ElementTexts, m
     `<a class="fmark" href="#frow" style="grid-area:${cssRow(7)}/${cssCol(3)}" data-frow="10" aria-label="${escapeHtml(tr.t('grid.actinides'))}"><span>89–103</span></a>`,
     `<span class="flabel" id="frow" data-i18n="grid.lanthanides" style="grid-area:${cssRow(9)}/1/span 1/${cssCol(3)}">${escapeHtml(tr.t('grid.lanthanides'))}</span>`,
     `<span class="flabel" data-i18n="grid.actinides" style="grid-area:${cssRow(10)}/1/span 1/${cssCol(3)}">${escapeHtml(tr.t('grid.actinides'))}</span>`,
-    // El hueco superior central (grupos 3–12, períodos 1–2) aloja la leyenda y los controles de la vista.
-    `<div class="inset" id="inset" style="grid-area:${cssRow(1)}/${cssCol(3)}/${cssRow(3)}/${cssCol(13)}"></div>`,
+    // El hueco superior central (grupos 3–12, períodos 1–2) aloja la tarjeta del elemento o los controles de la vista.
+    `<div class="inset" id="inset" style="grid-area:1/${cssCol(3)}/${cssRow(3)}/${cssCol(13)}"></div>`,
+    // Leyenda y explicación de la línea escalonada: siempre debajo de la tabla.
+    `<div class="legend-area" id="legend-area"></div>`,
   );
   out.push('</div>');
   return out.join('');

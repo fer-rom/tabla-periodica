@@ -63,9 +63,24 @@ export function initGrid(onActivate: ActivateHandler): void {
     } else if (ev.key === 'Enter' || ev.key === ' ') {
       ev.preventDefault();
       onActivate(z, 'keyboard');
+    } else if (ev.key === 'Escape' && store.get().preview !== null) {
+      store.set({ preview: null });
     }
   });
 
+  store.select(
+    (s) => s.preview,
+    (z, prev) => {
+      if (prev !== null) setAttrOn(prev, 'data-current', false);
+      if (z !== null) setAttrOn(z, 'data-current', true);
+    },
+  );
+  store.select(
+    (s) => s.view,
+    (view) => {
+      if (view !== 'category') store.set({ preview: null });
+    },
+  );
   store.select(
     (s) => s.fit,
     (fit) => {

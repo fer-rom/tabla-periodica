@@ -120,7 +120,7 @@ function renderResult(res: FormulaResult): HTMLElement {
     });
     return h(
       'tr',
-      { 'data-cat': el?.category ?? null },
+      { 'data-cat': el?.category ?? null, 'data-hydrogen': el?.z === 1 ? '' : null },
       h('th', { scope: 'row' }, link),
       h('td', {}, tr.num(row.count)),
       h('td', {}, tr.num(row.mass, { minimumFractionDigits: 3, maximumFractionDigits: 3 })),
