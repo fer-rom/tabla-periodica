@@ -1,0 +1,267 @@
+/* ───────────── Grilla de la tabla ───────────── */
+
+.scroller {
+  container: table / inline-size;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  padding-block: 0.25rem 0.75rem;
+  margin-inline: calc(-1 * clamp(12px, 3vw, 32px));
+  padding-inline: clamp(12px, 3vw, 32px);
+}
+
+.ptable {
+  --label: 1.25rem;
+  /* Celda fluida: llena el ancho disponible entre 30 px (móvil, con desplazamiento) y 72 px. */
+  --cell: clamp(30px, calc((100cqi - var(--label) - 18 * var(--gap)) / 18), 72px);
+  --cellh: calc(var(--cell) * 1.12);
+  display: grid;
+  grid-template-columns: var(--label) repeat(18, var(--cell));
+  grid-template-rows: auto repeat(7, var(--cellh)) calc(var(--cellh) * 0.3) repeat(2, var(--cellh)) auto;
+  gap: var(--gap);
+  width: max-content;
+  margin-inline: auto;
+  position: relative;
+}
+
+/* Vista completa en pantallas chicas: entra todo, a costa de celdas mínimas. */
+.ptable[data-fit='true'] {
+  --cell: calc((100cqi - var(--label) - 18 * var(--gap)) / 18);
+}
+
+.pgrid,
+.prow {
+  display: contents;
+}
+
+.ghead,
+.phead {
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  line-height: 1;
+  user-select: none;
+}
+.ghead {
+  place-self: end center;
+  padding-block-end: 0.3rem;
+}
+.phead {
+  place-self: center end;
+  padding-inline-end: 0.35rem;
+}
+
+.el {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    'z'
+    'sym';
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  padding: calc(var(--cell) * 0.08) calc(var(--cell) * 0.1);
+  min-width: 0;
+  background: var(--cat-bg);
+  box-shadow: inset 0 calc(var(--cell) * -0.045 - 1px) 0 var(--cat-edge);
+  border-radius: var(--radius-cell);
+  color: var(--ink);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    opacity var(--dur) var(--ease-out);
+}
+
+.el::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--cell) * 0.1);
+  right: calc(var(--cell) * 0.1);
+  width: calc(var(--cell) * 0.15);
+  aspect-ratio: 1;
+  background: var(--cat-edge);
+  clip-path: var(--glyph);
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.el .z {
+  grid-area: z;
+  font-size: max(8px, calc(var(--cell) * 0.19));
+  line-height: 1;
+  color: var(--ink-2);
+}
+
+.el .sym {
+  grid-area: sym;
+  font-size: calc(var(--cell) * 0.42);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.el .nm,
+.el .ms {
+  display: none;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.15;
+}
+
+@container table (min-width: 1080px) {
+  .el {
+    grid-template-areas:
+      'z'
+      'sym'
+      'nm'
+      'ms';
+    grid-template-rows: auto 1fr auto auto;
+  }
+  .el .sym {
+    font-size: calc(var(--cell) * 0.34);
+  }
+  .el .nm {
+    display: block;
+    grid-area: nm;
+    font-size: calc(var(--cell) * 0.145);
+  }
+  .el .ms {
+    display: block;
+    grid-area: ms;
+    font-size: calc(var(--cell) * 0.135);
+    color: var(--ink-2);
+  }
+}
+
+@media (hover: hover) {
+  .el:hover {
+    transform: translateY(-2px) scale(1.04);
+    z-index: 2;
+  }
+}
+
+.el:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+  z-index: 3;
+}
+
+.el[data-dim] {
+  opacity: 0.28;
+}
+
+.el[data-picked]::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 2px dashed var(--accent);
+  border-radius: calc(var(--radius-cell) + 2px);
+  pointer-events: none;
+}
+
+.el[data-current] {
+  outline: 3px solid var(--ink);
+  outline-offset: 1px;
+  z-index: 2;
+}
+
+/* ───────────── Fila f ───────────── */
+
+.fmark {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius-cell);
+  font-size: max(8px, calc(var(--cell) * 0.17));
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.flabel {
+  align-self: center;
+  justify-self: end;
+  padding-inline-end: 0.4rem;
+  font-size: max(10px, calc(var(--cell) * 0.16));
+  color: var(--ink-2);
+  text-align: end;
+  line-height: 1.1;
+  max-width: calc(var(--cell) * 2 + var(--label));
+}
+
+/* ───────────── Hueco central: leyenda y controles de la vista ───────────── */
+
+.inset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.25rem calc(var(--cell) * 0.2);
+  min-width: 0;
+}
+
+@container table (max-width: 1079px) {
+  .inset {
+    grid-area: 12 / 1 / span 1 / -1 !important;
+    position: sticky;
+    left: 0;
+    width: min(100%, calc(100cqi - 2 * clamp(12px, 3vw, 32px)));
+    padding: 0.75rem 0 0;
+  }
+}
+
+/* ───────────── Vista: mapa de calor ───────────── */
+
+.ptable[data-view='heatmap'] .el {
+  background: var(--heat, var(--paper-3));
+  color: var(--heat-ink, var(--ink));
+  box-shadow: none;
+}
+.ptable[data-view='heatmap'] .el .z,
+.ptable[data-view='heatmap'] .el .ms {
+  color: inherit;
+}
+.ptable[data-view='heatmap'] .el::after,
+.ptable[data-view='temperature'] .el::after {
+  opacity: 0;
+}
+.ptable[data-view='heatmap'] .el[data-null],
+.ptable[data-view='temperature'] .el[data-phase='unknown'] {
+  background: repeating-linear-gradient(-45deg, var(--paper-3) 0 4px, var(--paper-2) 4px 8px);
+  color: var(--ink-2);
+}
+
+/* ───────────── Vista: temperatura ───────────── */
+
+.ptable[data-view='temperature'] .el {
+  box-shadow: none;
+}
+.ptable[data-view='temperature'] .el[data-phase='solid'] {
+  background: var(--phase-solid);
+}
+.ptable[data-view='temperature'] .el .nm,
+.ptable[data-view='temperature'] .el .ms {
+  text-shadow: 0 0 3px var(--paper-2);
+}
+/* Líquido: ondas horizontales. Gas: puntos dispersos. Los mismos patrones se usan en la leyenda. */
+.ptable[data-view='temperature'] .el[data-phase='liquid'],
+.ph-swatch[data-phase='liquid'] {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 100%, transparent 62%, var(--phase-mark) 64% 70%, transparent 72%) 0 0 / 8px
+      6px,
+    var(--phase-liquid);
+}
+.ptable[data-view='temperature'] .el[data-phase='gas'],
+.ph-swatch[data-phase='gas'] {
+  background:
+    radial-gradient(circle, var(--phase-mark) 0 1px, transparent 1.5px) 0 0 / 9px 9px,
+    radial-gradient(circle, var(--phase-mark) 0 1px, transparent 1.5px) 4.5px 4.5px / 9px 9px,
+    var(--phase-gas);
+}
+.ph-swatch[data-phase='solid'] {
+  background: var(--phase-solid);
+}
+.ph-swatch[data-phase='unknown'] {
+  background: repeating-linear-gradient(-45deg, var(--paper-3) 0 3px, var(--paper-2) 3px 6px);
+}

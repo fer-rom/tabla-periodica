@@ -1,0 +1,186 @@
+/*
+ * Dirección visual «Espectro»
+ * Claro: papel milimetrado de laboratorio (verde grisáceo, tinta verde-negra).
+ * Oscuro: la cámara de un espectroscopio (índigo profundo).
+ * Acento único: la línea H-alfa del hidrógeno (656 nm), usada solo para foco y selección.
+ * Las categorías se reparten en el círculo de tono OKLCH con luminosidad igualada,
+ * y cada una lleva además un glifo para no depender del color.
+ */
+
+@font-face {
+  font-family: 'Atkinson Next';
+  src: url('/fonts/atkinson-next-var-latin.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201E, U+2022, U+2026,
+    U+2032-2033, U+2039-203A, U+20AC, U+2122, U+2190-2193, U+2212, U+2248, U+2260, U+2264-2265;
+}
+
+/* Respaldo con métricas ajustadas a Atkinson: evita saltos de layout (CLS) al cargar la fuente. */
+@font-face {
+  font-family: 'Atkinson Fallback';
+  src: local('Arial'), local('Liberation Sans'), local('Helvetica Neue'), local('Roboto');
+  size-adjust: 100%;
+  ascent-override: 98.4%;
+  descent-override: 31.6%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: light;
+  --font: 'Atkinson Next', 'Atkinson Fallback', system-ui, sans-serif;
+
+  --paper: #eef2ee;
+  --paper-2: #f7f9f6;
+  --paper-3: #e2e9e4;
+  --ink: #17211d;
+  --ink-2: #4b5a54;
+  --rule: #c9d4cd;
+  --rule-strong: #9fb0a7;
+  --accent: #b42318;
+  --accent-ink: #ffffff;
+  --scrim: rgb(23 33 29 / 0.42);
+
+  /* Categorías: fondo de celda y trazo (barra inferior y glifo). */
+  --l-bg: 91%;
+  --c-bg: 0.055;
+  --l-edge: 52%;
+  --c-edge: 0.14;
+
+  /* Estados físicos en la vista de temperatura. */
+  --phase-solid: oklch(84% 0.035 250);
+  --phase-liquid: oklch(80% 0.09 205);
+  --phase-gas: oklch(87% 0.09 75);
+  --phase-unknown: var(--paper-3);
+  --phase-mark: rgb(23 33 29 / 0.2);
+
+  --radius-cell: 4px;
+  --radius-ui: 10px;
+  --gap: 3px;
+  --shadow-sheet: 0 24px 60px -24px rgb(23 33 29 / 0.45);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 240ms;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #13111c;
+  --paper-2: #1c1928;
+  --paper-3: #26223a;
+  --ink: #ece9f4;
+  --ink-2: #a7a1bc;
+  --rule: #322e45;
+  --rule-strong: #4d4766;
+  --accent: #ff7b6b;
+  --accent-ink: #1a0b09;
+  --scrim: rgb(5 4 10 / 0.6);
+
+  --l-bg: 29%;
+  --c-bg: 0.065;
+  --l-edge: 74%;
+  --c-edge: 0.13;
+
+  --phase-solid: oklch(42% 0.04 260);
+  --phase-liquid: oklch(46% 0.09 215);
+  --phase-gas: oklch(50% 0.1 70);
+  --phase-mark: rgb(236 233 244 / 0.24);
+  --shadow-sheet: 0 24px 60px -20px rgb(0 0 0 / 0.7);
+}
+
+[data-cat='alkali-metal'] {
+  --h: 25;
+}
+[data-cat='alkaline-earth-metal'] {
+  --h: 62;
+}
+[data-cat='transition-metal'] {
+  --h: 240;
+}
+[data-cat='post-transition-metal'] {
+  --h: 200;
+}
+[data-cat='metalloid'] {
+  --h: 160;
+}
+[data-cat='nonmetal'] {
+  --h: 125;
+}
+[data-cat='halogen'] {
+  --h: 95;
+}
+[data-cat='noble-gas'] {
+  --h: 295;
+}
+[data-cat='lanthanide'] {
+  --h: 330;
+}
+[data-cat='actinide'] {
+  --h: 355;
+}
+
+[data-cat] {
+  --cat-bg: oklch(var(--l-bg) var(--c-bg) var(--h));
+  --cat-edge: oklch(var(--l-edge) var(--c-edge) var(--h));
+}
+
+/* Glifos por categoría (clip-path): la categoría se distingue sin color. */
+[data-cat='alkali-metal'] {
+  --glyph: circle(50%);
+}
+[data-cat='alkaline-earth-metal'] {
+  --glyph: inset(8% round 1px);
+}
+[data-cat='transition-metal'] {
+  --glyph: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+[data-cat='post-transition-metal'] {
+  --glyph: polygon(50% 4%, 100% 96%, 0 96%);
+}
+[data-cat='metalloid'] {
+  --glyph: polygon(0 4%, 100% 4%, 50% 96%);
+}
+[data-cat='nonmetal'] {
+  --glyph: polygon(
+    35% 0,
+    65% 0,
+    65% 35%,
+    100% 35%,
+    100% 65%,
+    65% 65%,
+    65% 100%,
+    35% 100%,
+    35% 65%,
+    0 65%,
+    0 35%,
+    35% 35%
+  );
+}
+[data-cat='halogen'] {
+  --glyph: polygon(
+    20% 0,
+    50% 30%,
+    80% 0,
+    100% 20%,
+    70% 50%,
+    100% 80%,
+    80% 100%,
+    50% 70%,
+    20% 100%,
+    0 80%,
+    30% 50%,
+    0 20%
+  );
+}
+[data-cat='noble-gas'] {
+  --glyph: polygon(evenodd, 50% 0, 100% 50%, 50% 100%, 0 50%, 50% 0, 50% 28%, 28% 50%, 50% 72%, 72% 50%, 50% 28%);
+}
+[data-cat='lanthanide'] {
+  --glyph: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%);
+}
+[data-cat='actinide'] {
+  --glyph: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
