@@ -1,0 +1,42 @@
+name: Snapshot de fuentes
+
+# Descarga PubChem, NIST e IUPAC/CIAAW y commitea el snapshot crudo en data/raw/.
+# Corre a mano (Actions → "Snapshot de fuentes" → Run workflow) o cuando cambia el script.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/fetch-sources.ts
+      - .github/workflows/data.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-snapshot
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Descargar fuentes
+        run: node scripts/fetch-sources.ts
+      - name: Commitear snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw
+          if git diff --cached --quiet; then
+            echo "Sin cambios en las fuentes."
+          else
+            git commit -m "data: snapshot de fuentes $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
