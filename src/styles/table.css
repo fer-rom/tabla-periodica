@@ -281,29 +281,3 @@
 .ph-swatch[data-phase='unknown'] {
   background: repeating-linear-gradient(-45deg, var(--paper-3) 0 3px, var(--paper-2) 3px 6px);
 }
-
-/* ───────────── Línea escalonada metales / no metales ───────────── */
-
-.stair {
-  position: relative;
-  pointer-events: none;
-  z-index: 4;
-}
-.stair::after {
-  content: '';
-  position: absolute;
-  background: var(--stair);
-}
-/* El trazo va por el centro del hueco entre celdas y se prolonga para unir las esquinas. */
-.stair-l::after {
-  left: calc(var(--gap) / -2 - 1px);
-  top: calc(var(--gap) / -2 - 1px);
-  bottom: calc(var(--gap) / -2 - 1px);
-  width: 2px;
-}
-.stair-b::after {
-  bottom: calc(var(--gap) / -2 - 1px);
-  left: calc(var(--gap) / -2 - 1px);
-  right: calc(var(--gap) / -2 - 1px);
-  height: 2px;
-}

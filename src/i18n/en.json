@@ -68,7 +68,6 @@
     "antiquity": "Antiquity",
     "scaleMin": "min",
     "scaleMax": "max",
-    "divider": "The staircase line separates metals (left) from nonmetals (right). Metalloids sit along it.",
     "hydrogen": "Hydrogen (special case)"
   },
   "phases": {
@@ -263,6 +262,7 @@
     "more": "See more…",
     "shells": "Electron distribution",
     "configShort": "Condensed configuration",
-    "label": "{name} summary"
+    "label": "{name} summary",
+    "close": "Close summary"
   }
 }

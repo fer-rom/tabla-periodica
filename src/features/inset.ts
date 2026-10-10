@@ -103,16 +103,7 @@ function renderLegend(): DocumentFragment {
       tr.t('legend.hydrogen'),
     ),
   );
-  frag.append(
-    list,
-    h('p', { class: 'inset-hint' }, tr.t('legend.hint')),
-    h(
-      'p',
-      { class: 'stair-note' },
-      h('span', { class: 'stair-swatch', 'aria-hidden': 'true' }),
-      tr.t('legend.divider'),
-    ),
-  );
+  frag.append(list, h('p', { class: 'inset-hint' }, tr.t('legend.hint')));
   return frag;
 }
 
@@ -129,6 +120,12 @@ function renderPreview(z: number | null): HTMLElement {
   const more = h('button', { type: 'button', class: 'btn pv-more' }, tr.t('preview.more'));
   more.addEventListener('click', () => {
     openElement(el.z);
+  });
+  const close = h('button', { type: 'button', class: 'btn icon pv-close', 'aria-label': tr.t('preview.close') });
+  close.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>';
+  close.addEventListener('click', () => {
+    store.set({ preview: null });
   });
   return h(
     'section',
@@ -165,7 +162,7 @@ function renderPreview(z: number | null): HTMLElement {
       row(tr.t('properties.density'), formatValue(tr.lang, el.density, 'g/cm³')),
       row(tr.t('preview.configShort'), config),
     ),
-    more,
+    h('div', { class: 'pv-actions' }, more, close),
   );
 }
 
