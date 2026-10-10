@@ -21,7 +21,7 @@ const ROOT = join(import.meta.dirname, '..');
 const RAW = join(ROOT, 'data', 'raw');
 const EDITORIAL = join(ROOT, 'data', 'editorial');
 const read = (dir: string, file: string): string => readFileSync(join(dir, file), 'utf8');
-const readJson = <T>(dir: string, file: string): T => JSON.parse(read(dir, file)) as T;
+const readJson = (dir: string, file: string): unknown => JSON.parse(read(dir, file));
 
 // ───────────────────────── utilidades de parseo ─────────────────────────
 
@@ -37,9 +37,9 @@ const stripTags = (s: string): string => decodeEntities(s.replace(/<[^>]*>/g, ''
 
 /** Primer número de una cadena con incertidumbre: "55.845(2)", "1.0080 ± 0.0002", "4.002 602(2)". */
 export function leadingNumber(s: string): number | null {
-  const m = /^[\s[]*(-?\d[\d\s ]*(?:\.[\d\s ]+)?(?:[eE][+-]?\d+)?)/.exec(s);
+  const m = /^[\s[]*(-?\d[\d\s\u00a0]*(?:\.[\d\s\u00a0]+)?(?:[eE][+-]?\d+)?)/.exec(s);
   if (!m?.[1]) return null;
-  const n = Number(m[1].replace(/[\s ]/g, ''));
+  const n = Number(m[1].replace(/[\s\u00a0]/g, ''));
   return Number.isFinite(n) ? n : null;
 }
 
@@ -172,7 +172,7 @@ interface PubChemTable {
 }
 
 function loadPubChemTable(): Map<number, Record<string, string>> {
-  const t = readJson<PubChemTable>(RAW, 'pubchem-periodictable.json').Table;
+  const t = (readJson(RAW, 'pubchem-periodictable.json') as PubChemTable).Table;
   const cols = t.Columns.Column;
   const out = new Map<number, Record<string, string>>();
   for (const row of t.Row) {
@@ -366,11 +366,11 @@ function main(): void {
   const ionization = loadNistIonization();
   const abridged = loadCiaaw('ciaaw-abridged.html');
   const standard = loadCiaaw('ciaaw-standard.html');
-  const names = readJson<Names>(EDITORIAL, 'names.es.json');
-  const discoverers = readJson<Discoverers>(EDITORIAL, 'discoverers.json');
-  const aliasesEn = readJson<Record<string, string[]>>(EDITORIAL, 'aliases.en.json');
-  const overrides = readJson<Record<string, Override>>(EDITORIAL, 'overrides.json');
-  const editorial = { es: readJson<EditorialTexts>(EDITORIAL, 'texts.es.json'), en: readJson<EditorialTexts>(EDITORIAL, 'texts.en.json') };
+  const names = (readJson(EDITORIAL, 'names.es.json') as Names);
+  const discoverers = (readJson(EDITORIAL, 'discoverers.json') as Discoverers);
+  const aliasesEn = (readJson(EDITORIAL, 'aliases.en.json') as Record<string, string[]>);
+  const overrides = (readJson(EDITORIAL, 'overrides.json') as Record<string, Override>);
+  const editorial = { es: (readJson(EDITORIAL, 'texts.es.json') as EditorialTexts), en: (readJson(EDITORIAL, 'texts.en.json') as EditorialTexts) };
 
   const elements: Element[] = [];
   const texts: Record<'es' | 'en', Record<string, ElementText>> = { es: {}, en: {} };
@@ -387,9 +387,9 @@ function main(): void {
     const abr = abridged.get(z) ?? '—';
     const atomicWeight = abr.startsWith('—') ? null : leadingNumber(abr);
     const std = standard.get(z) ?? '';
-    const iv = /^\[\s*([\d\s .]+),\s*([\d\s .]+)\]/.exec(std);
+    const iv = /^\[\s*([\d\s\u00a0.]+),\s*([\d\s\u00a0.]+)\]/.exec(std);
     const atomicWeightInterval: [number, number] | null = iv
-      ? [Number((iv[1] ?? '').replace(/[\s ]/g, '')), Number((iv[2] ?? '').replace(/[\s ]/g, ''))]
+      ? [Number((iv[1] ?? '').replace(/[\s\u00a0]/g, '')), Number((iv[2] ?? '').replace(/[\s\u00a0]/g, ''))]
       : null;
     const nistEl = nist.get(z);
     let massNumber: number | null = null;
@@ -465,7 +465,7 @@ function main(): void {
     process.exit(1);
   }
 
-  const manifest = readJson<unknown[]>(RAW, 'manifest.json');
+  const manifest = (readJson(RAW, 'manifest.json') as unknown[]);
   writeFileSync(join(ROOT, 'src', 'data', 'elements.json'), JSON.stringify(elements) + '\n');
   writeFileSync(join(ROOT, 'src', 'data', 'texts.es.json'), JSON.stringify(texts.es) + '\n');
   writeFileSync(join(ROOT, 'src', 'data', 'texts.en.json'), JSON.stringify(texts.en) + '\n');

@@ -65,7 +65,7 @@ async function get(url: string, attempt = 1): Promise<string> {
     if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
     return await res.text();
   } catch (err) {
-    if (attempt >= 4) throw new Error(`${url}: ${String(err)}`);
+    if (attempt >= 4) throw new Error(`${url}: ${String(err)}`, { cause: err });
     await sleep(1500 * attempt);
     return get(url, attempt + 1);
   }

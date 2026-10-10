@@ -1,0 +1,36 @@
+name: Toolchain snapshot
+
+# Empaqueta node_modules (Linux x64) en la rama huérfana `toolchain`, para entornos de
+# desarrollo sin acceso al registro de npm. No interviene en el build ni en el deploy.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [package.json]
+
+permissions:
+  contents: write
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npm install --no-audit --no-fund
+      - name: Empaquetar node_modules en partes de 90 MB
+        run: |
+          mkdir -p /tmp/tc
+          tar -czf - node_modules package-lock.json | split -b 90m - /tmp/tc/node_modules.tgz.part-
+          ls -la /tmp/tc
+      - name: Publicar en la rama toolchain
+        run: |
+          cd /tmp/tc
+          git init -q -b toolchain
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "toolchain: node_modules para ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" toolchain

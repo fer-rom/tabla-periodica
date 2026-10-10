@@ -113,8 +113,10 @@ export function validateElements(data: unknown): Issue[] {
     seenSym.set(e.symbol, e.z);
 
     // Coherencia interna.
-    if (Array.isArray(e.shells) && e.shells.reduce((a, b) => a + b, 0) !== e.z)
-      add('shells', 'la suma de electrones por capa no coincide con Z');
+    const shells: unknown = el.shells;
+    if (Array.isArray(shells) && shells.every((n): n is number => typeof n === 'number')) {
+      if (shells.reduce((a, b) => a + b, 0) !== e.z) add('shells', 'la suma de electrones por capa no coincide con Z');
+    }
     if (typeof e.electronConfiguration === 'string') {
       const total = [...e.electronConfiguration.matchAll(/\d[spdfg](\d{1,2})/g)].reduce(
         (acc, m) => acc + Number(m[1]),
@@ -134,8 +136,12 @@ export function validateElements(data: unknown): Issue[] {
     if (e.antiquity && e.year !== null) add('year', 'conocido desde la antigüedad pero con año');
     if ((e.y === 9 || e.y === 10) !== (e.group === null)) add('group', 'grupo inconsistente con la fila f');
     if (e.y <= 7 && e.y !== e.period) add('y', 'fila de grilla distinta del período');
-    const abundSum = Array.isArray(e.isotopes)
-      ? e.isotopes.reduce((acc, iso) => acc + (iso.abundance ?? 0), 0)
+    const isotopes: unknown = el.isotopes;
+    const abundSum = Array.isArray(isotopes)
+      ? isotopes.reduce((acc: number, iso: unknown) => {
+          const a = typeof iso === 'object' && iso !== null ? (iso as { abundance?: unknown }).abundance : null;
+          return acc + (typeof a === 'number' ? a : 0);
+        }, 0)
       : 0;
     if (abundSum > 1.0005) add('isotopes', `las abundancias suman ${abundSum.toFixed(4)} (> 1)`);
   });
