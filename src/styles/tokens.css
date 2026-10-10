@@ -84,9 +84,9 @@
   --l-edge: 74%;
   --c-edge: 0.13;
 
-  --phase-solid: oklch(42% 0.04 260);
-  --phase-liquid: oklch(46% 0.09 215);
-  --phase-gas: oklch(50% 0.1 70);
+  --phase-solid: oklch(34% 0.04 260);
+  --phase-liquid: oklch(36% 0.08 215);
+  --phase-gas: oklch(38% 0.08 70);
   --phase-mark: rgb(236 233 244 / 0.24);
   --shadow-sheet: 0 24px 60px -20px rgb(0 0 0 / 0.7);
 }

@@ -96,12 +96,13 @@
 }
 .temp-marks {
   position: relative;
-  height: 1.4rem;
+  height: 1.75rem;
 }
 .temp-marks button {
   position: absolute;
   left: var(--at);
   transform: translateX(-50%);
+  min-height: 1.5rem;
   padding: 0 0.3rem;
   border: 0;
   background: transparent;

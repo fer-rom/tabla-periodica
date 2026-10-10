@@ -128,15 +128,25 @@ function renderTemperature(): HTMLElement {
   counts = h('ul', { class: 'temp-counts' });
   const marks = h(
     'div',
-    { class: 'temp-marks', 'aria-hidden': 'true' },
+    { class: 'temp-marks' },
     h(
       'button',
-      { type: 'button', tabindex: -1, style: `--at:${(298 / T_MAX) * 100}%`, 'data-k': 298 },
+      {
+        type: 'button',
+        style: `--at:${(298 / T_MAX) * 100}%`,
+        'data-k': 298,
+        'aria-label': `${tr.t('temperature.room')} (298 K)`,
+      },
       tr.t('temperature.room'),
     ),
     h(
       'button',
-      { type: 'button', tabindex: -1, style: `--at:${(5772 / T_MAX) * 100}%`, 'data-k': 5772 },
+      {
+        type: 'button',
+        style: `--at:${(5772 / T_MAX) * 100}%`,
+        'data-k': 5772,
+        'aria-label': `${tr.t('temperature.sunSurface')} (5772 K)`,
+      },
       tr.t('temperature.sunSurface'),
     ),
   );
