@@ -25,7 +25,11 @@ const MASSES: Readonly<Record<string, number>> = {
   U: 238.03,
 };
 const lookup: MassLookup = (s) =>
-  s === 'Tc' ? { mass: 97, approximate: true } : MASSES[s] === undefined ? undefined : { mass: MASSES[s], approximate: false };
+  s === 'Tc'
+    ? { mass: 97, approximate: true }
+    : MASSES[s] === undefined
+      ? undefined
+      : { mass: MASSES[s], approximate: false };
 
 function mass(f: string): number {
   const r = parseFormula(f, lookup);
@@ -40,7 +44,9 @@ function errorOf(f: string): { code: FormulaErrorCode; index: number; token: str
 }
 
 describe('parseFormula — fórmulas válidas', () => {
-  it('agua', () => expect(mass('H2O')).toBeCloseTo(18.015, 3));
+  it('agua', () => {
+    expect(mass('H2O')).toBeCloseTo(18.015, 3);
+  });
   it('elemento solo y diatómico', () => {
     expect(mass('Fe')).toBeCloseTo(55.845, 3);
     expect(mass('O2')).toBeCloseTo(31.998, 3);
@@ -49,15 +55,25 @@ describe('parseFormula — fórmulas válidas', () => {
     expect(mass('Co')).toBeCloseTo(58.933, 3);
     expect(mass('CO')).toBeCloseTo(28.01, 3);
   });
-  it('glucosa', () => expect(mass('C6H12O6')).toBeCloseTo(180.156, 3));
-  it('paréntesis con multiplicador: Ca(OH)2', () => expect(mass('Ca(OH)2')).toBeCloseTo(74.092, 3));
+  it('glucosa', () => {
+    expect(mass('C6H12O6')).toBeCloseTo(180.156, 3);
+  });
+  it('paréntesis con multiplicador: Ca(OH)2', () => {
+    expect(mass('Ca(OH)2')).toBeCloseTo(74.092, 3);
+  });
   it('paréntesis anidados: Al2(SO4)3 y Ca3(PO4)2', () => {
     expect(mass('Al2(SO4)3')).toBeCloseTo(342.132, 2);
     expect(mass('Ca3(PO4)2')).toBeCloseTo(310.174, 2);
   });
-  it('corchetes con paréntesis dentro: [Co(NH3)6]Cl3', () => expect(mass('[Co(NH3)6]Cl3')).toBeCloseTo(267.469, 2));
-  it('llaves, corchetes y paréntesis anidados', () => expect(mass('{[(CH3)2]2}3')).toBeCloseTo(12 * 15.035, 3));
-  it('hidrato con punto medio: CuSO4·5H2O', () => expect(mass('CuSO4·5H2O')).toBeCloseTo(249.677, 2));
+  it('corchetes con paréntesis dentro: [Co(NH3)6]Cl3', () => {
+    expect(mass('[Co(NH3)6]Cl3')).toBeCloseTo(267.469, 2);
+  });
+  it('llaves, corchetes y paréntesis anidados', () => {
+    expect(mass('{[(CH3)2]2}3')).toBeCloseTo(12 * 15.035, 3);
+  });
+  it('hidrato con punto medio: CuSO4·5H2O', () => {
+    expect(mass('CuSO4·5H2O')).toBeCloseTo(249.677, 2);
+  });
   it('separadores alternativos de hidrato y espacios', () => {
     const ref = mass('CuSO4·5H2O');
     expect(mass('CuSO4*5H2O')).toBeCloseTo(ref, 9);
@@ -68,8 +84,12 @@ describe('parseFormula — fórmulas válidas', () => {
     expect(mass('MgSO4·7H2O')).toBeCloseTo(246.466, 2);
     expect(mass('Na2CO3·10H2O')).toBeCloseTo(286.138, 2);
   });
-  it('subíndices Unicode: H₂SO₄', () => expect(mass('H₂SO₄')).toBeCloseTo(98.07, 2));
-  it('coeficiente inicial multiplica todo el segmento', () => expect(mass('2H2O')).toBeCloseTo(2 * 18.015, 3));
+  it('subíndices Unicode: H₂SO₄', () => {
+    expect(mass('H₂SO₄')).toBeCloseTo(98.07, 2);
+  });
+  it('coeficiente inicial multiplica todo el segmento', () => {
+    expect(mass('2H2O')).toBeCloseTo(2 * 18.015, 3);
+  });
   it('elemento repetido se agrega: CH3COOH', () => {
     const r = parseFormula('CH3COOH', lookup);
     expect(r.ok).toBe(true);
@@ -97,7 +117,9 @@ describe('parseFormula — fórmulas válidas', () => {
       expect(r.value.molarMass).toBeCloseTo(97 + 4 * 15.999, 3);
     }
   });
-  it('fórmula grande: cisplatino Pt(NH3)2Cl2', () => expect(mass('Pt(NH3)2Cl2')).toBeCloseTo(300.042, 2));
+  it('fórmula grande: cisplatino Pt(NH3)2Cl2', () => {
+    expect(mass('Pt(NH3)2Cl2')).toBeCloseTo(300.042, 2);
+  });
 });
 
 describe('parseFormula — errores claros', () => {
@@ -129,15 +151,36 @@ describe('parseFormula — errores claros', () => {
       if (index !== undefined) expect(e.index).toBe(index);
     });
   }
-  it('fórmula demasiado larga', () => expect(errorOf('H'.repeat(201)).code).toBe('tooLong'));
-  it('informa el símbolo desconocido', () => expect(errorOf('NaQ').token).toBe('Q'));
+  it('fórmula demasiado larga', () => {
+    expect(errorOf('H'.repeat(201)).code).toBe('tooLong');
+  });
+  it('informa el símbolo desconocido', () => {
+    expect(errorOf('NaQ').token).toBe('Q');
+  });
 });
 
 describe('hillFormula', () => {
   it('con carbono: C, H y luego alfabético', () => {
-    expect(hillFormula(new Map([['O', 1], ['H', 6], ['C', 2], ['N', 1]]))).toBe('C2H6NO');
+    expect(
+      hillFormula(
+        new Map([
+          ['O', 1],
+          ['H', 6],
+          ['C', 2],
+          ['N', 1],
+        ]),
+      ),
+    ).toBe('C2H6NO');
   });
   it('sin carbono: todo alfabético', () => {
-    expect(hillFormula(new Map([['O', 4], ['S', 1], ['H', 2]]))).toBe('H2O4S');
+    expect(
+      hillFormula(
+        new Map([
+          ['O', 4],
+          ['S', 1],
+          ['H', 2],
+        ]),
+      ),
+    ).toBe('H2O4S');
   });
 });

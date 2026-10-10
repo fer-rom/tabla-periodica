@@ -14,7 +14,15 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
-import { CATEGORIES, type Block, type Category, type Element, type ElementText, type Isotope, type Phase } from '../src/data/types.ts';
+import {
+  CATEGORIES,
+  type Block,
+  type Category,
+  type Element,
+  type ElementText,
+  type Isotope,
+  type Phase,
+} from '../src/data/types.ts';
 import { validateElements, validateTexts } from '../src/data/validate.ts';
 
 const ROOT = join(import.meta.dirname, '..');
@@ -33,7 +41,10 @@ const decodeEntities = (s: string): string =>
     .replace(/&amp;/g, '&')
     .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)));
 
-const stripTags = (s: string): string => decodeEntities(s.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
+const stripTags = (s: string): string =>
+  decodeEntities(s.replace(/<[^>]*>/g, ''))
+    .replace(/\s+/g, ' ')
+    .trim();
 
 /** Primer número de una cadena con incertidumbre: "55.845(2)", "1.0080 ± 0.0002", "4.002 602(2)". */
 export function leadingNumber(s: string): number | null {
@@ -74,7 +85,17 @@ const HALF_LIFE_UNITS: Readonly<Record<string, number>> = {
   d: 86400,
 };
 const YEAR = 365.2422 * 86400; // convención de NUBASE
-const YEAR_PREFIX: Readonly<Record<string, number>> = { y: 1, ky: 1e3, My: 1e6, Gy: 1e9, Ty: 1e12, Py: 1e15, Ey: 1e18, Zy: 1e21, Yy: 1e24 };
+const YEAR_PREFIX: Readonly<Record<string, number>> = {
+  y: 1,
+  ky: 1e3,
+  My: 1e6,
+  Gy: 1e9,
+  Ty: 1e12,
+  Py: 1e15,
+  Ey: 1e18,
+  Zy: 1e21,
+  Yy: 1e24,
+};
 
 /** Semidesintegración en segundos; `'stable'` si es estable; `null` si no se especifica. */
 export function parseHalfLife(s: string): number | 'stable' | null {
@@ -108,8 +129,7 @@ export function gridPosition(z: number): { x: number; y: number; period: number;
     y = period === 6 ? 9 : 10;
   } else x = offset - 13;
   const group = y > 7 ? null : x;
-  const block: Block =
-    y > 7 ? 'f' : z === 2 ? 's' : x <= 2 ? 's' : x >= 13 ? 'p' : 'd';
+  const block: Block = y > 7 ? 'f' : z === 2 ? 's' : x <= 2 ? 's' : x >= 13 ? 'p' : 'd';
   return { x, y, period, group, block };
 }
 
@@ -137,7 +157,11 @@ const fmtSubshells = (list: Subshell[]): string => list.map((s) => `${s.n}${s.l}
 
 function expandConfig(config: string): Subshell[] {
   const core = /^\[([A-Z][a-z]?)\]/.exec(config);
-  const own = [...config.matchAll(/(\d)([spdfg])(\d{1,2})/g)].map((m) => ({ n: Number(m[1]), l: m[2] ?? 's', e: Number(m[3]) }));
+  const own = [...config.matchAll(/(\d)([spdfg])(\d{1,2})/g)].map((m) => ({
+    n: Number(m[1]),
+    l: m[2] ?? 's',
+    e: Number(m[3]),
+  }));
   if (!core?.[1]) return own;
   const coreConfig = CORES[core[1]];
   if (coreConfig === undefined) throw new Error(`núcleo desconocido ${core[1]}`);
@@ -149,7 +173,11 @@ export function electronConfigs(raw: string): { full: string; short: string; pre
   const predicted = /predicted/i.test(raw);
   const clean = raw.replace(/\(.*?\)/g, '').trim();
   const core = /^\[([A-Z][a-z]?)\]/.exec(clean)?.[1];
-  const own = [...clean.matchAll(/(\d)([spdfg])(\d{1,2})/g)].map((m) => ({ n: Number(m[1]), l: m[2] ?? 's', e: Number(m[3]) }));
+  const own = [...clean.matchAll(/(\d)([spdfg])(\d{1,2})/g)].map((m) => ({
+    n: Number(m[1]),
+    l: m[2] ?? 's',
+    e: Number(m[3]),
+  }));
   // Abreviada: orden por capa (n, luego l), como la publica NIST: [Xe] 4f14 5d10 6s1.
   own.sort((a, b) => a.n - b.n || (L_INDEX[a.l] ?? 0) - (L_INDEX[b.l] ?? 0));
   // Completa: orden de llenado de Madelung (diagrama de Moeller), como se enseña en la escuela.
@@ -194,14 +222,16 @@ interface FlatInfo {
 
 let pubchemCache: Record<string, FlatInfo[]> | null = null;
 const pubchemElements = (): Record<string, FlatInfo[]> =>
-  (pubchemCache ??= JSON.parse(gunzipSync(readFileSync(join(RAW, 'pubchem-elements.json.gz'))).toString('utf8')) as Record<
-    string,
-    FlatInfo[]
-  >);
+  (pubchemCache ??= JSON.parse(
+    gunzipSync(readFileSync(join(RAW, 'pubchem-elements.json.gz'))).toString('utf8'),
+  ) as Record<string, FlatInfo[]>);
 
 const pugFind = (z: number, path: string, name: string | null, source?: string): FlatInfo | undefined =>
   pubchemElements()[String(z)]?.find(
-    (i) => i.path === path && (name === null || i.name === name) && (source === undefined || (i.source ?? '').startsWith(source)),
+    (i) =>
+      i.path === path &&
+      (name === null || i.name === name) &&
+      (source === undefined || (i.source ?? '').startsWith(source)),
   );
 
 /** Tablas columnares de PUG View: cada `name` es una columna cuyos valores separa " | ". */
@@ -233,7 +263,11 @@ function loadNistCompositions(): Map<number, NistElement> {
     if (interval) abundance = (Number(interval[1]) + Number(interval[2])) / 2;
     else if (comp !== '') abundance = leadingNumber(comp);
     const entry = out.get(z) ?? { standardWeight: field('Standard Atomic Weight'), isotopes: [] };
-    entry.isotopes.push({ a: Number(field('Mass Number')), mass: leadingNumber(field('Relative Atomic Mass')), abundance });
+    entry.isotopes.push({
+      a: Number(field('Mass Number')),
+      mass: leadingNumber(field('Relative Atomic Mass')),
+      abundance,
+    });
     out.set(z, entry);
   }
   return out;
@@ -299,7 +333,14 @@ function amdcNuclides(z: number, symbol: string): AmdcNuclide[] {
     // "16O" es el estado fundamental; "16Op", "234Um" son isómeros.
     const m = /^(\d+)([A-Za-z]+)$/.exec(n.trim());
     if (!m?.[2]?.startsWith(symbol)) return [];
-    return [{ a: Number(m[1]), ground: m[2] === symbol, halfLife: parseHalfLife(halves[i] ?? ''), mass: leadingNumber(masses[i] ?? '') }];
+    return [
+      {
+        a: Number(m[1]),
+        ground: m[2] === symbol,
+        halfLife: parseHalfLife(halves[i] ?? ''),
+        mass: leadingNumber(masses[i] ?? ''),
+      },
+    ];
   });
 }
 
@@ -310,7 +351,13 @@ function buildIsotopes(z: number, symbol: string, nist: NistElement | undefined)
   if (natural.length > 0) {
     return natural.map((i) => {
       const h = byA.get(i.a)?.halfLife ?? null;
-      return { a: i.a, mass: i.mass, abundance: i.abundance, stable: h === 'stable', halfLife: typeof h === 'number' ? h : null };
+      return {
+        a: i.a,
+        mass: i.mass,
+        abundance: i.abundance,
+        stable: h === 'stable',
+        halfLife: typeof h === 'number' ? h : null,
+      };
     });
   }
   // Sin isótopos naturales: los tres de mayor semidesintegración conocida.
@@ -366,11 +413,14 @@ function main(): void {
   const ionization = loadNistIonization();
   const abridged = loadCiaaw('ciaaw-abridged.html');
   const standard = loadCiaaw('ciaaw-standard.html');
-  const names = (readJson(EDITORIAL, 'names.es.json') as Names);
-  const discoverers = (readJson(EDITORIAL, 'discoverers.json') as Discoverers);
-  const aliasesEn = (readJson(EDITORIAL, 'aliases.en.json') as Record<string, string[]>);
-  const overrides = (readJson(EDITORIAL, 'overrides.json') as Record<string, Override>);
-  const editorial = { es: (readJson(EDITORIAL, 'texts.es.json') as EditorialTexts), en: (readJson(EDITORIAL, 'texts.en.json') as EditorialTexts) };
+  const names = readJson(EDITORIAL, 'names.es.json') as Names;
+  const discoverers = readJson(EDITORIAL, 'discoverers.json') as Discoverers;
+  const aliasesEn = readJson(EDITORIAL, 'aliases.en.json') as Record<string, string[]>;
+  const overrides = readJson(EDITORIAL, 'overrides.json') as Record<string, Override>;
+  const editorial = {
+    es: readJson(EDITORIAL, 'texts.es.json') as EditorialTexts,
+    en: readJson(EDITORIAL, 'texts.en.json') as EditorialTexts,
+  };
 
   const elements: Element[] = [];
   const texts: Record<'es' | 'en', Record<string, ElementText>> = { es: {}, en: {} };
@@ -381,7 +431,8 @@ function main(): void {
     if (!p) throw new Error(`PubChem no tiene Z=${z}`);
     const pos = gridPosition(z);
     const category = CATEGORY_MAP[p.GroupBlock ?? ''];
-    if (!category || !CATEGORIES.includes(category)) throw new Error(`categoría desconocida para Z=${z}: ${p.GroupBlock}`);
+    if (!category || !CATEGORIES.includes(category))
+      throw new Error(`categoría desconocida para Z=${z}: ${p.GroupBlock}`);
 
     // Peso atómico: valor abreviado de CIAAW; intervalo de la tabla estándar.
     const abr = abridged.get(z) ?? '—';
@@ -409,7 +460,8 @@ function main(): void {
     // Comprobación cruzada: grupo y período de Jefferson Lab (vía PubChem) contra la posición calculada.
     const jlGroup = pugFind(z, 'Properties > Element Group Number', null)?.text;
     const jlPeriod = pugFind(z, 'Properties > Element Period Number', null)?.text;
-    if (jlPeriod && Number(jlPeriod) !== pos.period) warnings.push(`Z=${z}: período ${pos.period} ≠ Jefferson Lab ${jlPeriod}`);
+    if (jlPeriod && Number(jlPeriod) !== pos.period)
+      warnings.push(`Z=${z}: período ${pos.period} ≠ Jefferson Lab ${jlPeriod}`);
     if (pos.group !== null && jlGroup && /^\d+$/.test(jlGroup) && Number(jlGroup) !== pos.group)
       warnings.push(`Z=${z}: grupo ${pos.group} ≠ Jefferson Lab ${jlGroup}`);
     if (p.Symbol === undefined || p.Symbol === '') throw new Error(`Z=${z} sin símbolo`);
@@ -453,8 +505,20 @@ function main(): void {
     const disc = discoverers[String(z)] ?? null;
     const discEs = disc === null ? null : typeof disc === 'string' ? disc : disc.es;
     const discEn = disc === null ? null : typeof disc === 'string' ? disc : disc.en;
-    texts.es[String(z)] = { name: nameEs?.es ?? '', aliases: nameEs?.aliases ?? [], discoverers: discEs, uses: es?.uses ?? null, fact: es?.fact ?? null };
-    texts.en[String(z)] = { name: p.Name ?? '', aliases: aliasesEn[String(z)] ?? [], discoverers: discEn, uses: en?.uses ?? null, fact: en?.fact ?? null };
+    texts.es[String(z)] = {
+      name: nameEs?.es ?? '',
+      aliases: nameEs?.aliases ?? [],
+      discoverers: discEs,
+      uses: es?.uses ?? null,
+      fact: es?.fact ?? null,
+    };
+    texts.en[String(z)] = {
+      name: p.Name ?? '',
+      aliases: aliasesEn[String(z)] ?? [],
+      discoverers: discEn,
+      uses: en?.uses ?? null,
+      fact: en?.fact ?? null,
+    };
   }
 
   const issues = [...validateElements(elements), ...validateTexts(texts.es, 'es'), ...validateTexts(texts.en, 'en')];
@@ -465,7 +529,7 @@ function main(): void {
     process.exit(1);
   }
 
-  const manifest = (readJson(RAW, 'manifest.json') as unknown[]);
+  const manifest = readJson(RAW, 'manifest.json') as unknown[];
   writeFileSync(join(ROOT, 'src', 'data', 'elements.json'), JSON.stringify(elements) + '\n');
   writeFileSync(join(ROOT, 'src', 'data', 'texts.es.json'), JSON.stringify(texts.es) + '\n');
   writeFileSync(join(ROOT, 'src', 'data', 'texts.en.json'), JSON.stringify(texts.en) + '\n');
@@ -481,42 +545,47 @@ function main(): void {
 }
 
 /** Procedencia de cada campo. Se publica en data/sources.json y en el README. */
-const FIELD_SOURCES: Readonly<Record<keyof Element | 'name.en' | 'name.es' | 'discoverers' | 'uses' | 'fact', string>> = {
-  z: 'PubChem periodic table (AtomicNumber)',
-  symbol: 'PubChem periodic table (Symbol)',
-  atomicWeight: 'IUPAC CIAAW, pesos atómicos estándar abreviados (ciaaw-abridged.html)',
-  atomicWeightInterval: 'IUPAC CIAAW, pesos atómicos estándar (intervalos, ciaaw-standard.html)',
-  massNumber: 'NIST Atomic Weights and Isotopic Compositions ([A] entre corchetes); si falta, isótopo fundamental de mayor semidesintegración según AMDC/IAEA (vía PubChem)',
-  group: 'Derivado de Z (convención La–Lu/Ac–Lr en fila f); contrastado con Jefferson Lab vía PubChem',
-  period: 'Derivado de Z; contrastado con Jefferson Lab vía PubChem',
-  block: 'Derivado de la posición en la grilla',
-  category: 'PubChem periodic table (GroupBlock)',
-  x: 'Derivado de Z',
-  y: 'Derivado de Z',
-  electronConfiguration: 'Expandida a partir de PubChem (ElectronConfiguration), orden de Madelung',
-  electronConfigurationShort: 'PubChem periodic table (ElectronConfiguration), ordenada por capa como en NIST',
-  shells: 'Derivado de la configuración electrónica completa',
-  electronegativity: 'PubChem periodic table (Electronegativity, escala de Pauling)',
-  atomicRadius: 'PubChem periodic table (AtomicRadius, van der Waals, pm)',
-  covalentRadius: 'PubChem Elements, "Covalent Atomic Radius" (primer valor listado)',
-  ionizationEnergy: 'NIST Atomic Spectra Database, primera energía de ionización (eV); fuera de su cobertura, PubChem',
-  electronAffinity: 'PubChem periodic table (ElectronAffinity, eV)',
-  oxidationStates: 'PubChem periodic table (OxidationStates, estados comunes)',
-  phase: 'PubChem periodic table (StandardState)',
-  predictedPhase: 'PubChem periodic table (StandardState "Expected to be…")',
-  meltingPoint: 'PubChem periodic table (MeltingPoint, K)',
-  boilingPoint: 'PubChem periodic table (BoilingPoint, K)',
-  sublimes: 'Derivado: ebullición/sublimación < fusión en PubChem',
-  density: 'PubChem periodic table (Density, g/cm³)',
-  year: 'PubChem periodic table (YearDiscovered); correcciones con fuente en data/editorial/overrides.json',
-  antiquity: 'PubChem periodic table (YearDiscovered = "Ancient")',
-  discoverers: 'Editorial, extraído de la historia de Jefferson Lab publicada en PubChem (data/editorial/discoverers.json)',
-  isotopes: 'NIST Atomic Weights and Isotopic Compositions (abundancias y masas); semidesintegración de AMDC/IAEA vía PubChem',
-  crustAbundance: 'Jefferson Lab, "Estimated Crustal Abundance" vía PubChem (mg/kg)',
-  'name.en': 'PubChem periodic table (Name)',
-  'name.es': 'Nomenclatura de la RSEQ/IUPAC en español (data/editorial/names.es.json)',
-  uses: 'Editorial, redactado a partir de las secciones Uses de Jefferson Lab y Los Alamos en PubChem',
-  fact: 'Editorial, redactado a partir de las secciones History/Description de PubChem',
-};
+const FIELD_SOURCES: Readonly<Record<keyof Element | 'name.en' | 'name.es' | 'discoverers' | 'uses' | 'fact', string>> =
+  {
+    z: 'PubChem periodic table (AtomicNumber)',
+    symbol: 'PubChem periodic table (Symbol)',
+    atomicWeight: 'IUPAC CIAAW, pesos atómicos estándar abreviados (ciaaw-abridged.html)',
+    atomicWeightInterval: 'IUPAC CIAAW, pesos atómicos estándar (intervalos, ciaaw-standard.html)',
+    massNumber:
+      'NIST Atomic Weights and Isotopic Compositions ([A] entre corchetes); si falta, isótopo fundamental de mayor semidesintegración según AMDC/IAEA (vía PubChem)',
+    group: 'Derivado de Z (convención La–Lu/Ac–Lr en fila f); contrastado con Jefferson Lab vía PubChem',
+    period: 'Derivado de Z; contrastado con Jefferson Lab vía PubChem',
+    block: 'Derivado de la posición en la grilla',
+    category: 'PubChem periodic table (GroupBlock)',
+    x: 'Derivado de Z',
+    y: 'Derivado de Z',
+    electronConfiguration: 'Expandida a partir de PubChem (ElectronConfiguration), orden de Madelung',
+    electronConfigurationShort: 'PubChem periodic table (ElectronConfiguration), ordenada por capa como en NIST',
+    shells: 'Derivado de la configuración electrónica completa',
+    electronegativity: 'PubChem periodic table (Electronegativity, escala de Pauling)',
+    atomicRadius: 'PubChem periodic table (AtomicRadius, van der Waals, pm)',
+    covalentRadius: 'PubChem Elements, "Covalent Atomic Radius" (primer valor listado)',
+    ionizationEnergy:
+      'NIST Atomic Spectra Database, primera energía de ionización (eV); fuera de su cobertura, PubChem',
+    electronAffinity: 'PubChem periodic table (ElectronAffinity, eV)',
+    oxidationStates: 'PubChem periodic table (OxidationStates, estados comunes)',
+    phase: 'PubChem periodic table (StandardState)',
+    predictedPhase: 'PubChem periodic table (StandardState "Expected to be…")',
+    meltingPoint: 'PubChem periodic table (MeltingPoint, K)',
+    boilingPoint: 'PubChem periodic table (BoilingPoint, K)',
+    sublimes: 'Derivado: ebullición/sublimación < fusión en PubChem',
+    density: 'PubChem periodic table (Density, g/cm³)',
+    year: 'PubChem periodic table (YearDiscovered); correcciones con fuente en data/editorial/overrides.json',
+    antiquity: 'PubChem periodic table (YearDiscovered = "Ancient")',
+    discoverers:
+      'Editorial, extraído de la historia de Jefferson Lab publicada en PubChem (data/editorial/discoverers.json)',
+    isotopes:
+      'NIST Atomic Weights and Isotopic Compositions (abundancias y masas); semidesintegración de AMDC/IAEA vía PubChem',
+    crustAbundance: 'Jefferson Lab, "Estimated Crustal Abundance" vía PubChem (mg/kg)',
+    'name.en': 'PubChem periodic table (Name)',
+    'name.es': 'Nomenclatura de la RSEQ/IUPAC en español (data/editorial/names.es.json)',
+    uses: 'Editorial, redactado a partir de las secciones Uses de Jefferson Lab y Los Alamos en PubChem',
+    fact: 'Editorial, redactado a partir de las secciones History/Description de PubChem',
+  };
 
 if (process.argv[1]?.endsWith('build-data.ts')) main();

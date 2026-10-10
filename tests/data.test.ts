@@ -40,7 +40,9 @@ describe('dataset — esquema y coherencia', () => {
   });
   it('usa unidades consistentes: eV, pm, K y g/cm³', () => {
     // Energías de ionización en eV (no kJ/mol): todas entre 3 y 25.
-    expect(elements.every((e) => e.ionizationEnergy === null || (e.ionizationEnergy > 3 && e.ionizationEnergy < 25))).toBe(true);
+    expect(
+      elements.every((e) => e.ionizationEnergy === null || (e.ionizationEnergy > 3 && e.ionizationEnergy < 25)),
+    ).toBe(true);
     // Radios en pm: el del H ronda 100, no 1 Å ni 1e-10 m.
     expect(el('H').atomicRadius).toBeGreaterThan(50);
     // Temperaturas en K: ningún punto de fusión por debajo de 0,5 K.
@@ -127,7 +129,10 @@ describe('textos por idioma', () => {
     expect(validateTexts(textsEn, 'en')).toEqual([]);
   });
   it('todos los elementos tienen nombre, usos y dato curioso en ambos idiomas', () => {
-    for (const t of [textsEs, textsEn] as Record<string, { name: string; uses: string | null; fact: string | null }>[]) {
+    for (const t of [textsEs, textsEn] as Record<
+      string,
+      { name: string; uses: string | null; fact: string | null }
+    >[]) {
       for (let z = 1; z <= 118; z++) {
         const entry = t[String(z)];
         expect(entry?.name).toBeTruthy();

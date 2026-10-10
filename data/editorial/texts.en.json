@@ -1,474 +1,474 @@
 {
- "1": {
-  "uses": "Ammonia production (Haber–Bosch process), oil refining, hydrogenation of oils and rocket fuel.",
-  "fact": "It is the most abundant element in the universe: about three quarters of the mass of ordinary matter."
- },
- "2": {
-  "uses": "Balloons and airships, cooling superconducting magnets (MRI scanners), diving gas mixtures and welding.",
-  "fact": "It was detected in the Sun's spectrum in 1868, before being found on Earth; its name comes from the Greek helios, 'sun'."
- },
- "3": {
-  "uses": "Lithium-ion batteries, special glasses and ceramics, lubricating greases and mood-stabilizing medicines.",
-  "fact": "It is the least dense metal: it floats on water."
- },
- "4": {
-  "uses": "X-ray–transparent windows, non-sparking copper–beryllium alloys and space telescope mirrors.",
-  "fact": "The James Webb Space Telescope's mirrors are made of beryllium coated with a thin layer of gold."
- },
- "5": {
-  "uses": "Heat-resistant borosilicate glass, nuclear reactor control rods (boron-10), lightweight fibers and detergents (borax).",
-  "fact": "Its compounds give fireworks and flares a green flame."
- },
- "6": {
-  "uses": "Steel (an iron–carbon alloy), graphite in pencils and batteries, industrial diamonds, carbon fiber and fuels.",
-  "fact": "Diamond and graphite are both pure carbon: only the arrangement of their atoms differs."
- },
- "7": {
-  "uses": "Ammonia for fertilizers and explosives, inert atmospheres in the food and electronics industries, and liquid nitrogen as a coolant.",
-  "fact": "It makes up about 78% of the air we breathe, by volume."
- },
- "8": {
-  "uses": "Steelmaking, oxy-acetylene welding, medical oxygen and, together with liquid hydrogen, rocket propulsion.",
-  "fact": "It is the most abundant element in Earth's crust: almost half of its mass."
- },
- "9": {
-  "uses": "Toothpaste and fluoridated water against tooth decay, Teflon, refrigerants and uranium enrichment (UF₆).",
-  "fact": "It is the most electronegative element and one of the most reactive: it even attacks glass."
- },
- "10": {
-  "uses": "Illuminated signs, helium–neon lasers, high-voltage indicators and cryogenic cooling.",
-  "fact": "It is so inert that no stable neon compound is known."
- },
- "11": {
-  "uses": "Table salt, baking soda and caustic soda; sodium-vapor street lamps and nuclear reactor coolant.",
-  "fact": "It is a metal soft enough to cut with a knife, and it reacts violently with water."
- },
- "12": {
-  "uses": "Lightweight alloys with aluminum for cars and aircraft, flares and fireworks, antacids and supplements.",
-  "fact": "Every chlorophyll molecule has a magnesium atom at its center."
- },
- "13": {
-  "uses": "Cans, foil, aircraft, construction, high-voltage power lines and cookware.",
-  "fact": "It was a precious metal, pricier than silver, until the Hall–Héroult process made it cheap to produce in 1886."
- },
- "14": {
-  "uses": "Computer chips and solar panels (high-purity silicon), glass, cement, ceramics and silicones.",
-  "fact": "Silicon Valley, California's tech hub, is named after this element."
- },
- "15": {
-  "uses": "Fertilizers, safety matches, detergents and food additives; it is part of DNA and bones.",
-  "fact": "Hennig Brand obtained it from urine in 1669: it is the first element with a known discoverer."
- },
- "16": {
-  "uses": "Sulfuric acid production, rubber vulcanization, fertilizers, fungicides and gunpowder.",
-  "fact": "The 'rotten egg' smell is not pure sulfur but hydrogen sulfide (H₂S)."
- },
- "17": {
-  "uses": "Drinking water and pool disinfection, PVC, bleach and the synthesis of medicines.",
-  "fact": "With sodium it forms table salt, even though both elements are dangerous on their own."
- },
- "18": {
-  "uses": "Inert atmosphere for welding, incandescent and fluorescent lamps, and semiconductor manufacturing.",
-  "fact": "It is the third most abundant gas in air; its name means 'lazy' in Greek."
- },
- "19": {
-  "uses": "Fertilizers (potassium chloride), soaps, glass and salt substitutes.",
-  "fact": "It is essential for nerve and muscle function."
- },
- "20": {
-  "uses": "Cement, lime and plaster; metal refining and dietary supplements.",
-  "fact": "It is the most abundant metal in the human body: it is part of bones and teeth."
- },
- "21": {
-  "uses": "Aluminum–scandium alloys for bicycle frames and sports equipment, and metal-halide lamps.",
-  "fact": "Mendeleev predicted it as 'eka-boron' before it was discovered in 1879."
- },
- "22": {
-  "uses": "Aircraft, medical implants and prostheses, and titanium dioxide as a white pigment in paints and sunscreens.",
-  "fact": "It is as strong as steel but weighs about 40% less."
- },
- "23": {
-  "uses": "Steel additive (ferrovanadium) for tools and springs, and catalyst in sulfuric acid production.",
-  "fact": "It is named after Vanadís, the Norse goddess of beauty, for the vivid colors of its compounds."
- },
- "24": {
-  "uses": "Stainless steel, chrome plating, pigments and leather tanning.",
-  "fact": "The red of rubies and the green of emeralds come from small amounts of chromium."
- },
- "25": {
-  "uses": "Steel production (nearly 90% of manganese), alkaline batteries and aluminum alloys.",
-  "fact": "Manganese dioxide was already used as a black pigment in prehistoric cave paintings."
- },
- "26": {
-  "uses": "Steel for construction, cars, tools and machinery: it is the most widely used metal in the world.",
-  "fact": "Hemoglobin uses iron to carry oxygen in the blood."
- },
- "27": {
-  "uses": "Permanent magnets (alnico), turbine superalloys, lithium-ion batteries and blue pigments.",
-  "fact": "Cobalt-60 is used in radiotherapy and to sterilize medical equipment."
- },
- "28": {
-  "uses": "Stainless steel, coins, rechargeable batteries and catalyst for hydrogenating oils.",
-  "fact": "Together with iron, it makes up most of Earth's core."
- },
- "29": {
-  "uses": "Electrical wiring, plumbing, motors, coins and alloys such as bronze and brass.",
-  "fact": "The Statue of Liberty's green color is a patina that formed on its copper."
- },
- "30": {
-  "uses": "Galvanizing steel against corrosion, brass, batteries and sunscreen (zinc oxide).",
-  "fact": "It is an essential nutrient: over 300 enzymes in the human body need it."
- },
- "31": {
-  "uses": "Semiconductors (gallium arsenide and nitride) for LEDs, lasers and solar panels.",
-  "fact": "It melts at about 30 °C: it liquefies in the palm of your hand."
- },
- "32": {
-  "uses": "Fiber optics, infrared lenses for night vision and electronics; the first transistors were made of germanium.",
-  "fact": "Mendeleev predicted it as 'eka-silicon' in 1871, fifteen years before it was discovered."
- },
- "33": {
-  "uses": "Semiconductors (gallium arsenide), wood preservatives and some medicines.",
-  "fact": "At normal pressure it does not melt: it goes straight from solid to gas (sublimes)."
- },
- "34": {
-  "uses": "Photocells, glass decolorizing, photocopiers and nutritional supplements.",
-  "fact": "It conducts electricity better the more light it receives, a key property of early photocopiers."
- },
- "35": {
-  "uses": "Flame retardants, water treatment, pharmaceuticals and oil-drilling fluids.",
-  "fact": "It is one of only two elements that are liquid at room temperature; the other is mercury."
- },
- "36": {
-  "uses": "High-performance lamps, high-speed photographic flashes and lasers.",
-  "fact": "From 1960 to 1983 the meter was defined using a spectral line of krypton-86."
- },
- "37": {
-  "uses": "Atomic clocks, photocells, special glasses and quantum physics research.",
-  "fact": "In 1995 the first Bose–Einstein condensate, a new state of matter, was created with rubidium."
- },
- "38": {
-  "uses": "Red fireworks and flares, ferrite magnets and toothpaste for sensitive teeth.",
-  "fact": "It is named after Strontian, a Scottish village where the mineral containing it was found."
- },
- "39": {
-  "uses": "Red phosphors in displays and LEDs, YAG lasers and high-temperature superconductors.",
-  "fact": "It is one of four elements named after the Swedish village of Ytterby."
- },
- "40": {
-  "uses": "Fuel cladding in nuclear reactors, ceramics, dental prostheses and cubic zirconia jewelry.",
-  "fact": "It absorbs very few neutrons, so the nuclear industry uses nearly 90% of the zirconium produced."
- },
- "41": {
-  "uses": "Niobium–titanium superconducting magnets (MRI, particle accelerators), special steels and jewelry.",
-  "fact": "In the United States it was called 'columbium' for over a century; IUPAC adopted the name niobium in 1949."
- },
- "42": {
-  "uses": "High-strength steels, refinery catalysts and molybdenum disulfide lubricants.",
-  "fact": "The bacteria that fix nitrogen in legume roots need molybdenum in their enzymes."
- },
- "43": {
-  "uses": "Medical imaging: technetium-99m is used in tens of millions of scans every year.",
-  "fact": "It was the first element produced artificially; its name comes from the Greek technetos, 'artificial'."
- },
- "44": {
-  "uses": "Wear-resistant electrical contacts, hard disk drives, catalysts and platinum alloys.",
-  "fact": "It is named after Ruthenia, the Latin name for Russia, where it was isolated from Ural platinum ore."
- },
- "45": {
-  "uses": "Car catalytic converters that reduce nitrogen oxides, mirrors, reflectors and jewelry plating.",
-  "fact": "It is one of the rarest and most expensive metals in the world."
- },
- "46": {
-  "uses": "Car catalytic converters, electronics, dentistry and jewelry (white gold).",
-  "fact": "At room temperature it can absorb up to about 900 times its own volume of hydrogen."
- },
- "47": {
-  "uses": "Jewelry and silverware, electrical contacts, mirrors, solar panels and antibacterial dressings.",
-  "fact": "It is the best conductor of electricity and heat of all metals."
- },
- "48": {
-  "uses": "Nickel–cadmium batteries (now being phased out), yellow and red pigments, and anti-corrosion coatings.",
-  "fact": "It is highly toxic: cadmium pollution caused itai-itai disease in 20th-century Japan."
- },
- "49": {
-  "uses": "Touchscreens and LCDs (indium tin oxide), low-melting solders and semiconductors.",
-  "fact": "It is named after the bright indigo line in its spectrum."
- },
- "50": {
-  "uses": "Tinplate for cans, electronic solders, bronze (with copper) and flat-glass manufacturing.",
-  "fact": "Bending a tin bar produces a characteristic crackling sound known as the 'tin cry'."
- },
- "51": {
-  "uses": "Flame retardants, lead alloys for batteries and semiconductors.",
-  "fact": "In ancient Egypt, antimony sulfide was used as black eye makeup."
- },
- "52": {
-  "uses": "Cadmium telluride solar panels, steel and copper alloys, and thermoelectric devices.",
-  "fact": "It is rarer than gold in Earth's crust, and handling it can leave a garlic smell on the breath."
- },
- "53": {
-  "uses": "Antiseptics, iodized salt, X-ray contrast agents and thyroid medicine.",
-  "fact": "Its dark crystals give off a violet vapor when heated; its name means 'violet' in Greek."
- },
- "54": {
-  "uses": "Car headlights, camera flashes, satellite ion thrusters and general anesthesia.",
-  "fact": "In 1962 it became the first noble gas to form a chemical compound."
- },
- "55": {
-  "uses": "Atomic clocks, oil-drilling fluids and photoelectric cells.",
-  "fact": "The SI second is defined by a transition of the cesium-133 atom."
- },
- "56": {
-  "uses": "Contrast agent for digestive-tract X-rays, green fireworks and drilling fluids.",
-  "fact": "Barium sulfate is so insoluble that it can be swallowed safely to image the stomach with X-rays."
- },
- "57": {
-  "uses": "Camera lenses, nickel–metal hydride batteries in hybrid cars and refinery catalysts.",
-  "fact": "It gives its name to the lanthanide series; from the Greek lanthanein, 'to lie hidden'."
- },
- "58": {
-  "uses": "Car catalytic converters, glass polishing and lighter flints (ferrocerium).",
-  "fact": "It is the most abundant lanthanide in Earth's crust."
- },
- "59": {
-  "uses": "Powerful magnets together with neodymium, protective goggles for welders and yellow glass.",
-  "fact": "Its name means 'green twin': it was separated from its 'twin', neodymium, in 1885."
- },
- "60": {
-  "uses": "Neodymium magnets for electric motors, headphones, hard drives and wind turbines; lasers.",
-  "fact": "Neodymium magnets are the strongest permanent magnets manufactured."
- },
- "61": {
-  "uses": "Luminous paints, long-life nuclear batteries and thickness-gauging instruments.",
-  "fact": "All its isotopes are radioactive: only minute traces exist in Earth's crust."
- },
- "62": {
-  "uses": "Heat-resistant samarium–cobalt magnets and treatment of bone pain in cancer patients.",
-  "fact": "It is named after the mineral samarskite, itself named after Russian engineer Vasili Samarsky-Bykhovets."
- },
- "63": {
-  "uses": "Red and blue phosphors in displays and lamps, and security marks that glow under ultraviolet light.",
-  "fact": "Euro banknotes contain luminescent europium compounds as an anti-counterfeiting measure."
- },
- "64": {
-  "uses": "MRI contrast agents, nuclear control rods and memory devices.",
-  "fact": "It is magnetic like iron only below about 20 °C: a hot day takes its magnetism away."
- },
- "65": {
-  "uses": "Green phosphors in displays, electric motor magnets and materials that change shape in a magnetic field.",
-  "fact": "It is another of the four elements named after the Swedish village of Ytterby."
- },
- "66": {
-  "uses": "High-temperature neodymium magnets for electric cars and wind turbines, lasers and lamps.",
-  "fact": "Its name means 'hard to get' in Greek, because isolating it was so laborious."
- },
- "67": {
-  "uses": "Medical holmium lasers, pole pieces for very strong magnets and spectrophotometer calibration.",
-  "fact": "It is named after Holmia, the Latin name for Stockholm."
- },
- "68": {
-  "uses": "Fiber-optic amplifiers, dermatological lasers and pink-tinted glass.",
-  "fact": "Erbium-doped amplifiers let the internet cross oceans through fiber-optic cables."
- },
- "69": {
-  "uses": "Portable X-ray devices and surgical lasers.",
-  "fact": "It is one of the scarcest lanthanides; its name comes from Thule, the mythical far north."
- },
- "70": {
-  "uses": "Optical atomic clocks, industrial lasers and stainless steel additive.",
-  "fact": "Ytterbium optical clocks are among the most precise instruments ever built."
- },
- "71": {
-  "uses": "PET scanner detectors, refinery catalysts and tumor therapy with lutetium-177.",
-  "fact": "It is named after Lutetia, the Latin name for Paris."
- },
- "72": {
-  "uses": "Nuclear control rods, turbine superalloys and insulators in modern chips.",
-  "fact": "It is named after Hafnia, the Latin name for Copenhagen, where it was discovered."
- },
- "73": {
-  "uses": "Capacitors in phones and computers, surgical implants and chemical-industry equipment.",
-  "fact": "It is named after Tantalus of Greek mythology, because it barely reacts with acids."
- },
- "74": {
-  "uses": "Incandescent lamp filaments, tungsten carbide cutting tools and counterweights.",
-  "fact": "It has the highest melting point of all metals: about 3400 °C."
- },
- "75": {
-  "uses": "Superalloys for jet engine turbines and catalysts for producing high-octane gasoline.",
-  "fact": "It was the last naturally occurring non-radioactive element to be discovered, in 1925."
- },
- "76": {
-  "uses": "Fountain pen tips, electrical contacts and very hard alloys.",
-  "fact": "It is the densest element: a liter of osmium would weigh over 22 kilograms."
- },
- "77": {
-  "uses": "Long-life spark plugs, high-temperature crucibles and platinum alloys.",
-  "fact": "An iridium-rich layer from 66 million years ago supports the asteroid hypothesis for the dinosaurs' extinction."
- },
- "78": {
-  "uses": "Car catalytic converters, jewelry, sensors and anticancer drugs such as cisplatin.",
-  "fact": "Until 2019, the kilogram was defined by a platinum–iridium cylinder kept near Paris."
- },
- "79": {
-  "uses": "Jewelry, monetary reserves, electronic contacts and dentistry.",
-  "fact": "It is so malleable that a single gram can be beaten into a sheet of more than half a square meter."
- },
- "80": {
-  "uses": "Fluorescent lamps, switches and scientific instruments; its use is restricted because of its toxicity.",
-  "fact": "It is the only metal that is liquid at room temperature."
- },
- "81": {
-  "uses": "Infrared detectors, cardiac perfusion imaging (thallium-201) and special optical glass.",
-  "fact": "Its name comes from the Greek thallos, 'green shoot', for the bright green line in its spectrum."
- },
- "82": {
-  "uses": "Car batteries, shielding against X-rays and radiation, and counterweights; dropped from gasoline and paint because of its toxicity.",
-  "fact": "The symbol Pb comes from the Latin plumbum, which is also the root of the word 'plumber'."
- },
- "83": {
-  "uses": "Stomach medicines, cosmetics and a non-toxic replacement for lead in alloys and shot.",
-  "fact": "It is slightly radioactive, but its half-life is over a billion times the age of the universe."
- },
- "84": {
-  "uses": "Static eliminators in industry and, in the past, heat sources in satellites.",
-  "fact": "Marie Curie named it after Poland, her native country."
- },
- "85": {
-  "uses": "Research into cancer therapies using astatine-211.",
-  "fact": "No visible sample has ever been seen: it would vaporize from the heat of its own radioactivity."
- },
- "86": {
-  "uses": "Geological research and, in the past, radiotherapy; today it is measured in homes for health reasons.",
-  "fact": "When it builds up in basements and homes, it is the second leading cause of lung cancer after smoking."
- },
- "87": {
-  "uses": "Scientific research only: it is so unstable that no visible amount has ever been collected.",
-  "fact": "Marguerite Perey discovered it in 1939: it was the last element found in nature."
- },
- "88": {
-  "uses": "Prostate cancer treatment with radium-223; it was once used in luminous paints.",
-  "fact": "In the 20th century watch dials were painted with radium, and many workers who handled it became seriously ill."
- },
- "89": {
-  "uses": "Neutron sources and targeted cancer therapy with actinium-225.",
-  "fact": "It glows with a bluish light in the dark because of its intense radioactivity."
- },
- "90": {
-  "uses": "Welding electrodes, magnesium alloys and a potential nuclear reactor fuel.",
-  "fact": "It is named after Thor, the Norse god of thunder."
- },
- "91": {
-  "uses": "Scientific research only.",
-  "fact": "It is one of the scarcest and hardest-to-isolate naturally occurring elements."
- },
- "92": {
-  "uses": "Fuel for nuclear power plants; depleted uranium is used in armor and counterweights.",
-  "fact": "The half-life of uranium-238 is about 4.5 billion years, close to the age of the Earth."
- },
- "93": {
-  "uses": "Neutron detectors and production of plutonium-238.",
-  "fact": "It was named after the planet Neptune, the next one after Uranus."
- },
- "94": {
-  "uses": "Nuclear fuel and plutonium-238 generators for space probes.",
-  "fact": "The Voyager probes are still sending data thanks to the heat of their plutonium-238."
- },
- "95": {
-  "uses": "Ionization smoke detectors (americium-241) and radiation sources for industrial gauges.",
-  "fact": "There is probably americium in your home: it is inside many smoke detectors."
- },
- "96": {
-  "uses": "Alpha-particle sources for spectrometers, such as those on Mars rovers.",
-  "fact": "It is named in honor of Marie and Pierre Curie."
- },
- "97": {
-  "uses": "Research and production of heavier elements such as tennessine.",
-  "fact": "It is named after Berkeley, the Californian city where it was synthesized."
- },
- "98": {
-  "uses": "Neutron sources for starting reactors, prospecting for gold and oil, and treating some tumors.",
-  "fact": "A single microgram of californium-252 emits millions of neutrons per second."
- },
- "99": {
-  "uses": "Se descubrió en 1952 en los restos de la primera bomba de hidrógeno; su nombre honra a Albert Einstein.",
-  "fact": "It was discovered in 1952 in the debris of the first hydrogen bomb; it is named after Albert Einstein."
- },
- "100": {
-  "uses": "También apareció en los restos de la primera bomba de hidrógeno; su nombre honra a Enrico Fermi.",
-  "fact": "It also turned up in the debris of the first hydrogen bomb; it is named after Enrico Fermi."
- },
- "101": {
-  "uses": "Fue el primer elemento sintetizado de a un átomo por vez; su nombre honra a Dmitri Mendeléyev.",
-  "fact": "It was the first element synthesized one atom at a time; it is named after Dmitri Mendeleev."
- },
- "102": {
-  "uses": "Su nombre honra a Alfred Nobel; su descubrimiento se disputó durante años entre Suecia, Estados Unidos y la URSS.",
-  "fact": "It is named after Alfred Nobel; its discovery was disputed for years between Sweden, the United States and the USSR."
- },
- "103": {
-  "uses": "Su nombre honra a Ernest Lawrence, inventor del ciclotrón.",
-  "fact": "It is named after Ernest Lawrence, inventor of the cyclotron."
- },
- "104": {
-  "uses": "Su nombre honra a Ernest Rutherford y fue objeto de disputa durante la Guerra Fría.",
-  "fact": "It is named after Ernest Rutherford, and its name was disputed during the Cold War."
- },
- "105": {
-  "uses": "Su nombre viene de Dubna, la ciudad rusa sede del Instituto Unificado de Investigaciones Nucleares.",
-  "fact": "It is named after Dubna, the Russian city that hosts the Joint Institute for Nuclear Research."
- },
- "106": {
-  "uses": "Glenn Seaborg fue la primera persona en tener un elemento con su nombre estando en vida.",
-  "fact": "Glenn Seaborg was the first person to have an element named after him while still alive."
- },
- "107": {
-  "uses": "Su nombre honra a Niels Bohr, pionero del modelo atómico.",
-  "fact": "It is named after Niels Bohr, a pioneer of the atomic model."
- },
- "108": {
-  "uses": "Su nombre viene de Hassia, nombre latino del estado alemán de Hesse.",
-  "fact": "It is named after Hassia, the Latin name for the German state of Hesse."
- },
- "109": {
-  "uses": "Su nombre honra a Lise Meitner, codescubridora de la fisión nuclear.",
-  "fact": "It is named after Lise Meitner, co-discoverer of nuclear fission."
- },
- "110": {
-  "uses": "Su nombre viene de Darmstadt, la ciudad alemana donde fue sintetizado.",
-  "fact": "It is named after Darmstadt, the German city where it was synthesized."
- },
- "111": {
-  "uses": "Su nombre honra a Wilhelm Röntgen, descubridor de los rayos X.",
-  "fact": "It is named after Wilhelm Röntgen, discoverer of X-rays."
- },
- "112": {
-  "uses": "Su nombre honra a Nicolás Copérnico, que propuso que la Tierra gira alrededor del Sol.",
-  "fact": "It is named after Nicolaus Copernicus, who proposed that the Earth orbits the Sun."
- },
- "113": {
-  "uses": "Fue el primer elemento descubierto en Asia; su nombre viene de Nihon, «Japón».",
-  "fact": "It was the first element discovered in Asia; its name comes from Nihon, 'Japan'."
- },
- "114": {
-  "uses": "Su nombre honra al físico Gueorgui Fliórov y al laboratorio de Dubna que lleva su nombre.",
-  "fact": "It is named after physicist Georgy Flyorov and the Dubna laboratory that bears his name."
- },
- "115": {
-  "uses": "Su nombre viene de la región de Moscú, donde se encuentra Dubna.",
-  "fact": "It is named after the Moscow region, where Dubna is located."
- },
- "116": {
-  "uses": "Su nombre honra al Laboratorio Nacional Lawrence Livermore de Estados Unidos.",
-  "fact": "It is named after the Lawrence Livermore National Laboratory in the United States."
- },
- "117": {
-  "uses": "Su nombre viene de Tennessee; se sintetizó usando berkelio producido en Oak Ridge.",
-  "fact": "It is named after Tennessee; it was synthesized using berkelium produced at Oak Ridge."
- },
- "118": {
-  "uses": "Es el elemento más pesado conocido; su nombre honra al físico Yuri Oganessian, aún vivo cuando se lo bautizó.",
-  "fact": "It is the heaviest known element; it is named after physicist Yuri Oganessian, who was alive when it was named."
- }
+  "1": {
+    "uses": "Ammonia production (Haber–Bosch process), oil refining, hydrogenation of oils and rocket fuel.",
+    "fact": "It is the most abundant element in the universe: about three quarters of the mass of ordinary matter."
+  },
+  "2": {
+    "uses": "Balloons and airships, cooling superconducting magnets (MRI scanners), diving gas mixtures and welding.",
+    "fact": "It was detected in the Sun's spectrum in 1868, before being found on Earth; its name comes from the Greek helios, 'sun'."
+  },
+  "3": {
+    "uses": "Lithium-ion batteries, special glasses and ceramics, lubricating greases and mood-stabilizing medicines.",
+    "fact": "It is the least dense metal: it floats on water."
+  },
+  "4": {
+    "uses": "X-ray–transparent windows, non-sparking copper–beryllium alloys and space telescope mirrors.",
+    "fact": "The James Webb Space Telescope's mirrors are made of beryllium coated with a thin layer of gold."
+  },
+  "5": {
+    "uses": "Heat-resistant borosilicate glass, nuclear reactor control rods (boron-10), lightweight fibers and detergents (borax).",
+    "fact": "Its compounds give fireworks and flares a green flame."
+  },
+  "6": {
+    "uses": "Steel (an iron–carbon alloy), graphite in pencils and batteries, industrial diamonds, carbon fiber and fuels.",
+    "fact": "Diamond and graphite are both pure carbon: only the arrangement of their atoms differs."
+  },
+  "7": {
+    "uses": "Ammonia for fertilizers and explosives, inert atmospheres in the food and electronics industries, and liquid nitrogen as a coolant.",
+    "fact": "It makes up about 78% of the air we breathe, by volume."
+  },
+  "8": {
+    "uses": "Steelmaking, oxy-acetylene welding, medical oxygen and, together with liquid hydrogen, rocket propulsion.",
+    "fact": "It is the most abundant element in Earth's crust: almost half of its mass."
+  },
+  "9": {
+    "uses": "Toothpaste and fluoridated water against tooth decay, Teflon, refrigerants and uranium enrichment (UF₆).",
+    "fact": "It is the most electronegative element and one of the most reactive: it even attacks glass."
+  },
+  "10": {
+    "uses": "Illuminated signs, helium–neon lasers, high-voltage indicators and cryogenic cooling.",
+    "fact": "It is so inert that no stable neon compound is known."
+  },
+  "11": {
+    "uses": "Table salt, baking soda and caustic soda; sodium-vapor street lamps and nuclear reactor coolant.",
+    "fact": "It is a metal soft enough to cut with a knife, and it reacts violently with water."
+  },
+  "12": {
+    "uses": "Lightweight alloys with aluminum for cars and aircraft, flares and fireworks, antacids and supplements.",
+    "fact": "Every chlorophyll molecule has a magnesium atom at its center."
+  },
+  "13": {
+    "uses": "Cans, foil, aircraft, construction, high-voltage power lines and cookware.",
+    "fact": "It was a precious metal, pricier than silver, until the Hall–Héroult process made it cheap to produce in 1886."
+  },
+  "14": {
+    "uses": "Computer chips and solar panels (high-purity silicon), glass, cement, ceramics and silicones.",
+    "fact": "Silicon Valley, California's tech hub, is named after this element."
+  },
+  "15": {
+    "uses": "Fertilizers, safety matches, detergents and food additives; it is part of DNA and bones.",
+    "fact": "Hennig Brand obtained it from urine in 1669: it is the first element with a known discoverer."
+  },
+  "16": {
+    "uses": "Sulfuric acid production, rubber vulcanization, fertilizers, fungicides and gunpowder.",
+    "fact": "The 'rotten egg' smell is not pure sulfur but hydrogen sulfide (H₂S)."
+  },
+  "17": {
+    "uses": "Drinking water and pool disinfection, PVC, bleach and the synthesis of medicines.",
+    "fact": "With sodium it forms table salt, even though both elements are dangerous on their own."
+  },
+  "18": {
+    "uses": "Inert atmosphere for welding, incandescent and fluorescent lamps, and semiconductor manufacturing.",
+    "fact": "It is the third most abundant gas in air; its name means 'lazy' in Greek."
+  },
+  "19": {
+    "uses": "Fertilizers (potassium chloride), soaps, glass and salt substitutes.",
+    "fact": "It is essential for nerve and muscle function."
+  },
+  "20": {
+    "uses": "Cement, lime and plaster; metal refining and dietary supplements.",
+    "fact": "It is the most abundant metal in the human body: it is part of bones and teeth."
+  },
+  "21": {
+    "uses": "Aluminum–scandium alloys for bicycle frames and sports equipment, and metal-halide lamps.",
+    "fact": "Mendeleev predicted it as 'eka-boron' before it was discovered in 1879."
+  },
+  "22": {
+    "uses": "Aircraft, medical implants and prostheses, and titanium dioxide as a white pigment in paints and sunscreens.",
+    "fact": "It is as strong as steel but weighs about 40% less."
+  },
+  "23": {
+    "uses": "Steel additive (ferrovanadium) for tools and springs, and catalyst in sulfuric acid production.",
+    "fact": "It is named after Vanadís, the Norse goddess of beauty, for the vivid colors of its compounds."
+  },
+  "24": {
+    "uses": "Stainless steel, chrome plating, pigments and leather tanning.",
+    "fact": "The red of rubies and the green of emeralds come from small amounts of chromium."
+  },
+  "25": {
+    "uses": "Steel production (nearly 90% of manganese), alkaline batteries and aluminum alloys.",
+    "fact": "Manganese dioxide was already used as a black pigment in prehistoric cave paintings."
+  },
+  "26": {
+    "uses": "Steel for construction, cars, tools and machinery: it is the most widely used metal in the world.",
+    "fact": "Hemoglobin uses iron to carry oxygen in the blood."
+  },
+  "27": {
+    "uses": "Permanent magnets (alnico), turbine superalloys, lithium-ion batteries and blue pigments.",
+    "fact": "Cobalt-60 is used in radiotherapy and to sterilize medical equipment."
+  },
+  "28": {
+    "uses": "Stainless steel, coins, rechargeable batteries and catalyst for hydrogenating oils.",
+    "fact": "Together with iron, it makes up most of Earth's core."
+  },
+  "29": {
+    "uses": "Electrical wiring, plumbing, motors, coins and alloys such as bronze and brass.",
+    "fact": "The Statue of Liberty's green color is a patina that formed on its copper."
+  },
+  "30": {
+    "uses": "Galvanizing steel against corrosion, brass, batteries and sunscreen (zinc oxide).",
+    "fact": "It is an essential nutrient: over 300 enzymes in the human body need it."
+  },
+  "31": {
+    "uses": "Semiconductors (gallium arsenide and nitride) for LEDs, lasers and solar panels.",
+    "fact": "It melts at about 30 °C: it liquefies in the palm of your hand."
+  },
+  "32": {
+    "uses": "Fiber optics, infrared lenses for night vision and electronics; the first transistors were made of germanium.",
+    "fact": "Mendeleev predicted it as 'eka-silicon' in 1871, fifteen years before it was discovered."
+  },
+  "33": {
+    "uses": "Semiconductors (gallium arsenide), wood preservatives and some medicines.",
+    "fact": "At normal pressure it does not melt: it goes straight from solid to gas (sublimes)."
+  },
+  "34": {
+    "uses": "Photocells, glass decolorizing, photocopiers and nutritional supplements.",
+    "fact": "It conducts electricity better the more light it receives, a key property of early photocopiers."
+  },
+  "35": {
+    "uses": "Flame retardants, water treatment, pharmaceuticals and oil-drilling fluids.",
+    "fact": "It is one of only two elements that are liquid at room temperature; the other is mercury."
+  },
+  "36": {
+    "uses": "High-performance lamps, high-speed photographic flashes and lasers.",
+    "fact": "From 1960 to 1983 the meter was defined using a spectral line of krypton-86."
+  },
+  "37": {
+    "uses": "Atomic clocks, photocells, special glasses and quantum physics research.",
+    "fact": "In 1995 the first Bose–Einstein condensate, a new state of matter, was created with rubidium."
+  },
+  "38": {
+    "uses": "Red fireworks and flares, ferrite magnets and toothpaste for sensitive teeth.",
+    "fact": "It is named after Strontian, a Scottish village where the mineral containing it was found."
+  },
+  "39": {
+    "uses": "Red phosphors in displays and LEDs, YAG lasers and high-temperature superconductors.",
+    "fact": "It is one of four elements named after the Swedish village of Ytterby."
+  },
+  "40": {
+    "uses": "Fuel cladding in nuclear reactors, ceramics, dental prostheses and cubic zirconia jewelry.",
+    "fact": "It absorbs very few neutrons, so the nuclear industry uses nearly 90% of the zirconium produced."
+  },
+  "41": {
+    "uses": "Niobium–titanium superconducting magnets (MRI, particle accelerators), special steels and jewelry.",
+    "fact": "In the United States it was called 'columbium' for over a century; IUPAC adopted the name niobium in 1949."
+  },
+  "42": {
+    "uses": "High-strength steels, refinery catalysts and molybdenum disulfide lubricants.",
+    "fact": "The bacteria that fix nitrogen in legume roots need molybdenum in their enzymes."
+  },
+  "43": {
+    "uses": "Medical imaging: technetium-99m is used in tens of millions of scans every year.",
+    "fact": "It was the first element produced artificially; its name comes from the Greek technetos, 'artificial'."
+  },
+  "44": {
+    "uses": "Wear-resistant electrical contacts, hard disk drives, catalysts and platinum alloys.",
+    "fact": "It is named after Ruthenia, the Latin name for Russia, where it was isolated from Ural platinum ore."
+  },
+  "45": {
+    "uses": "Car catalytic converters that reduce nitrogen oxides, mirrors, reflectors and jewelry plating.",
+    "fact": "It is one of the rarest and most expensive metals in the world."
+  },
+  "46": {
+    "uses": "Car catalytic converters, electronics, dentistry and jewelry (white gold).",
+    "fact": "At room temperature it can absorb up to about 900 times its own volume of hydrogen."
+  },
+  "47": {
+    "uses": "Jewelry and silverware, electrical contacts, mirrors, solar panels and antibacterial dressings.",
+    "fact": "It is the best conductor of electricity and heat of all metals."
+  },
+  "48": {
+    "uses": "Nickel–cadmium batteries (now being phased out), yellow and red pigments, and anti-corrosion coatings.",
+    "fact": "It is highly toxic: cadmium pollution caused itai-itai disease in 20th-century Japan."
+  },
+  "49": {
+    "uses": "Touchscreens and LCDs (indium tin oxide), low-melting solders and semiconductors.",
+    "fact": "It is named after the bright indigo line in its spectrum."
+  },
+  "50": {
+    "uses": "Tinplate for cans, electronic solders, bronze (with copper) and flat-glass manufacturing.",
+    "fact": "Bending a tin bar produces a characteristic crackling sound known as the 'tin cry'."
+  },
+  "51": {
+    "uses": "Flame retardants, lead alloys for batteries and semiconductors.",
+    "fact": "In ancient Egypt, antimony sulfide was used as black eye makeup."
+  },
+  "52": {
+    "uses": "Cadmium telluride solar panels, steel and copper alloys, and thermoelectric devices.",
+    "fact": "It is rarer than gold in Earth's crust, and handling it can leave a garlic smell on the breath."
+  },
+  "53": {
+    "uses": "Antiseptics, iodized salt, X-ray contrast agents and thyroid medicine.",
+    "fact": "Its dark crystals give off a violet vapor when heated; its name means 'violet' in Greek."
+  },
+  "54": {
+    "uses": "Car headlights, camera flashes, satellite ion thrusters and general anesthesia.",
+    "fact": "In 1962 it became the first noble gas to form a chemical compound."
+  },
+  "55": {
+    "uses": "Atomic clocks, oil-drilling fluids and photoelectric cells.",
+    "fact": "The SI second is defined by a transition of the cesium-133 atom."
+  },
+  "56": {
+    "uses": "Contrast agent for digestive-tract X-rays, green fireworks and drilling fluids.",
+    "fact": "Barium sulfate is so insoluble that it can be swallowed safely to image the stomach with X-rays."
+  },
+  "57": {
+    "uses": "Camera lenses, nickel–metal hydride batteries in hybrid cars and refinery catalysts.",
+    "fact": "It gives its name to the lanthanide series; from the Greek lanthanein, 'to lie hidden'."
+  },
+  "58": {
+    "uses": "Car catalytic converters, glass polishing and lighter flints (ferrocerium).",
+    "fact": "It is the most abundant lanthanide in Earth's crust."
+  },
+  "59": {
+    "uses": "Powerful magnets together with neodymium, protective goggles for welders and yellow glass.",
+    "fact": "Its name means 'green twin': it was separated from its 'twin', neodymium, in 1885."
+  },
+  "60": {
+    "uses": "Neodymium magnets for electric motors, headphones, hard drives and wind turbines; lasers.",
+    "fact": "Neodymium magnets are the strongest permanent magnets manufactured."
+  },
+  "61": {
+    "uses": "Luminous paints, long-life nuclear batteries and thickness-gauging instruments.",
+    "fact": "All its isotopes are radioactive: only minute traces exist in Earth's crust."
+  },
+  "62": {
+    "uses": "Heat-resistant samarium–cobalt magnets and treatment of bone pain in cancer patients.",
+    "fact": "It is named after the mineral samarskite, itself named after Russian engineer Vasili Samarsky-Bykhovets."
+  },
+  "63": {
+    "uses": "Red and blue phosphors in displays and lamps, and security marks that glow under ultraviolet light.",
+    "fact": "Euro banknotes contain luminescent europium compounds as an anti-counterfeiting measure."
+  },
+  "64": {
+    "uses": "MRI contrast agents, nuclear control rods and memory devices.",
+    "fact": "It is magnetic like iron only below about 20 °C: a hot day takes its magnetism away."
+  },
+  "65": {
+    "uses": "Green phosphors in displays, electric motor magnets and materials that change shape in a magnetic field.",
+    "fact": "It is another of the four elements named after the Swedish village of Ytterby."
+  },
+  "66": {
+    "uses": "High-temperature neodymium magnets for electric cars and wind turbines, lasers and lamps.",
+    "fact": "Its name means 'hard to get' in Greek, because isolating it was so laborious."
+  },
+  "67": {
+    "uses": "Medical holmium lasers, pole pieces for very strong magnets and spectrophotometer calibration.",
+    "fact": "It is named after Holmia, the Latin name for Stockholm."
+  },
+  "68": {
+    "uses": "Fiber-optic amplifiers, dermatological lasers and pink-tinted glass.",
+    "fact": "Erbium-doped amplifiers let the internet cross oceans through fiber-optic cables."
+  },
+  "69": {
+    "uses": "Portable X-ray devices and surgical lasers.",
+    "fact": "It is one of the scarcest lanthanides; its name comes from Thule, the mythical far north."
+  },
+  "70": {
+    "uses": "Optical atomic clocks, industrial lasers and stainless steel additive.",
+    "fact": "Ytterbium optical clocks are among the most precise instruments ever built."
+  },
+  "71": {
+    "uses": "PET scanner detectors, refinery catalysts and tumor therapy with lutetium-177.",
+    "fact": "It is named after Lutetia, the Latin name for Paris."
+  },
+  "72": {
+    "uses": "Nuclear control rods, turbine superalloys and insulators in modern chips.",
+    "fact": "It is named after Hafnia, the Latin name for Copenhagen, where it was discovered."
+  },
+  "73": {
+    "uses": "Capacitors in phones and computers, surgical implants and chemical-industry equipment.",
+    "fact": "It is named after Tantalus of Greek mythology, because it barely reacts with acids."
+  },
+  "74": {
+    "uses": "Incandescent lamp filaments, tungsten carbide cutting tools and counterweights.",
+    "fact": "It has the highest melting point of all metals: about 3400 °C."
+  },
+  "75": {
+    "uses": "Superalloys for jet engine turbines and catalysts for producing high-octane gasoline.",
+    "fact": "It was the last naturally occurring non-radioactive element to be discovered, in 1925."
+  },
+  "76": {
+    "uses": "Fountain pen tips, electrical contacts and very hard alloys.",
+    "fact": "It is the densest element: a liter of osmium would weigh over 22 kilograms."
+  },
+  "77": {
+    "uses": "Long-life spark plugs, high-temperature crucibles and platinum alloys.",
+    "fact": "An iridium-rich layer from 66 million years ago supports the asteroid hypothesis for the dinosaurs' extinction."
+  },
+  "78": {
+    "uses": "Car catalytic converters, jewelry, sensors and anticancer drugs such as cisplatin.",
+    "fact": "Until 2019, the kilogram was defined by a platinum–iridium cylinder kept near Paris."
+  },
+  "79": {
+    "uses": "Jewelry, monetary reserves, electronic contacts and dentistry.",
+    "fact": "It is so malleable that a single gram can be beaten into a sheet of more than half a square meter."
+  },
+  "80": {
+    "uses": "Fluorescent lamps, switches and scientific instruments; its use is restricted because of its toxicity.",
+    "fact": "It is the only metal that is liquid at room temperature."
+  },
+  "81": {
+    "uses": "Infrared detectors, cardiac perfusion imaging (thallium-201) and special optical glass.",
+    "fact": "Its name comes from the Greek thallos, 'green shoot', for the bright green line in its spectrum."
+  },
+  "82": {
+    "uses": "Car batteries, shielding against X-rays and radiation, and counterweights; dropped from gasoline and paint because of its toxicity.",
+    "fact": "The symbol Pb comes from the Latin plumbum, which is also the root of the word 'plumber'."
+  },
+  "83": {
+    "uses": "Stomach medicines, cosmetics and a non-toxic replacement for lead in alloys and shot.",
+    "fact": "It is slightly radioactive, but its half-life is over a billion times the age of the universe."
+  },
+  "84": {
+    "uses": "Static eliminators in industry and, in the past, heat sources in satellites.",
+    "fact": "Marie Curie named it after Poland, her native country."
+  },
+  "85": {
+    "uses": "Research into cancer therapies using astatine-211.",
+    "fact": "No visible sample has ever been seen: it would vaporize from the heat of its own radioactivity."
+  },
+  "86": {
+    "uses": "Geological research and, in the past, radiotherapy; today it is measured in homes for health reasons.",
+    "fact": "When it builds up in basements and homes, it is the second leading cause of lung cancer after smoking."
+  },
+  "87": {
+    "uses": "Scientific research only: it is so unstable that no visible amount has ever been collected.",
+    "fact": "Marguerite Perey discovered it in 1939: it was the last element found in nature."
+  },
+  "88": {
+    "uses": "Prostate cancer treatment with radium-223; it was once used in luminous paints.",
+    "fact": "In the 20th century watch dials were painted with radium, and many workers who handled it became seriously ill."
+  },
+  "89": {
+    "uses": "Neutron sources and targeted cancer therapy with actinium-225.",
+    "fact": "It glows with a bluish light in the dark because of its intense radioactivity."
+  },
+  "90": {
+    "uses": "Welding electrodes, magnesium alloys and a potential nuclear reactor fuel.",
+    "fact": "It is named after Thor, the Norse god of thunder."
+  },
+  "91": {
+    "uses": "Scientific research only.",
+    "fact": "It is one of the scarcest and hardest-to-isolate naturally occurring elements."
+  },
+  "92": {
+    "uses": "Fuel for nuclear power plants; depleted uranium is used in armor and counterweights.",
+    "fact": "The half-life of uranium-238 is about 4.5 billion years, close to the age of the Earth."
+  },
+  "93": {
+    "uses": "Neutron detectors and production of plutonium-238.",
+    "fact": "It was named after the planet Neptune, the next one after Uranus."
+  },
+  "94": {
+    "uses": "Nuclear fuel and plutonium-238 generators for space probes.",
+    "fact": "The Voyager probes are still sending data thanks to the heat of their plutonium-238."
+  },
+  "95": {
+    "uses": "Ionization smoke detectors (americium-241) and radiation sources for industrial gauges.",
+    "fact": "There is probably americium in your home: it is inside many smoke detectors."
+  },
+  "96": {
+    "uses": "Alpha-particle sources for spectrometers, such as those on Mars rovers.",
+    "fact": "It is named in honor of Marie and Pierre Curie."
+  },
+  "97": {
+    "uses": "Research and production of heavier elements such as tennessine.",
+    "fact": "It is named after Berkeley, the Californian city where it was synthesized."
+  },
+  "98": {
+    "uses": "Neutron sources for starting reactors, prospecting for gold and oil, and treating some tumors.",
+    "fact": "A single microgram of californium-252 emits millions of neutrons per second."
+  },
+  "99": {
+    "uses": "Se descubrió en 1952 en los restos de la primera bomba de hidrógeno; su nombre honra a Albert Einstein.",
+    "fact": "It was discovered in 1952 in the debris of the first hydrogen bomb; it is named after Albert Einstein."
+  },
+  "100": {
+    "uses": "También apareció en los restos de la primera bomba de hidrógeno; su nombre honra a Enrico Fermi.",
+    "fact": "It also turned up in the debris of the first hydrogen bomb; it is named after Enrico Fermi."
+  },
+  "101": {
+    "uses": "Fue el primer elemento sintetizado de a un átomo por vez; su nombre honra a Dmitri Mendeléyev.",
+    "fact": "It was the first element synthesized one atom at a time; it is named after Dmitri Mendeleev."
+  },
+  "102": {
+    "uses": "Su nombre honra a Alfred Nobel; su descubrimiento se disputó durante años entre Suecia, Estados Unidos y la URSS.",
+    "fact": "It is named after Alfred Nobel; its discovery was disputed for years between Sweden, the United States and the USSR."
+  },
+  "103": {
+    "uses": "Su nombre honra a Ernest Lawrence, inventor del ciclotrón.",
+    "fact": "It is named after Ernest Lawrence, inventor of the cyclotron."
+  },
+  "104": {
+    "uses": "Su nombre honra a Ernest Rutherford y fue objeto de disputa durante la Guerra Fría.",
+    "fact": "It is named after Ernest Rutherford, and its name was disputed during the Cold War."
+  },
+  "105": {
+    "uses": "Su nombre viene de Dubna, la ciudad rusa sede del Instituto Unificado de Investigaciones Nucleares.",
+    "fact": "It is named after Dubna, the Russian city that hosts the Joint Institute for Nuclear Research."
+  },
+  "106": {
+    "uses": "Glenn Seaborg fue la primera persona en tener un elemento con su nombre estando en vida.",
+    "fact": "Glenn Seaborg was the first person to have an element named after him while still alive."
+  },
+  "107": {
+    "uses": "Su nombre honra a Niels Bohr, pionero del modelo atómico.",
+    "fact": "It is named after Niels Bohr, a pioneer of the atomic model."
+  },
+  "108": {
+    "uses": "Su nombre viene de Hassia, nombre latino del estado alemán de Hesse.",
+    "fact": "It is named after Hassia, the Latin name for the German state of Hesse."
+  },
+  "109": {
+    "uses": "Su nombre honra a Lise Meitner, codescubridora de la fisión nuclear.",
+    "fact": "It is named after Lise Meitner, co-discoverer of nuclear fission."
+  },
+  "110": {
+    "uses": "Su nombre viene de Darmstadt, la ciudad alemana donde fue sintetizado.",
+    "fact": "It is named after Darmstadt, the German city where it was synthesized."
+  },
+  "111": {
+    "uses": "Su nombre honra a Wilhelm Röntgen, descubridor de los rayos X.",
+    "fact": "It is named after Wilhelm Röntgen, discoverer of X-rays."
+  },
+  "112": {
+    "uses": "Su nombre honra a Nicolás Copérnico, que propuso que la Tierra gira alrededor del Sol.",
+    "fact": "It is named after Nicolaus Copernicus, who proposed that the Earth orbits the Sun."
+  },
+  "113": {
+    "uses": "Fue el primer elemento descubierto en Asia; su nombre viene de Nihon, «Japón».",
+    "fact": "It was the first element discovered in Asia; its name comes from Nihon, 'Japan'."
+  },
+  "114": {
+    "uses": "Su nombre honra al físico Gueorgui Fliórov y al laboratorio de Dubna que lleva su nombre.",
+    "fact": "It is named after physicist Georgy Flyorov and the Dubna laboratory that bears his name."
+  },
+  "115": {
+    "uses": "Su nombre viene de la región de Moscú, donde se encuentra Dubna.",
+    "fact": "It is named after the Moscow region, where Dubna is located."
+  },
+  "116": {
+    "uses": "Su nombre honra al Laboratorio Nacional Lawrence Livermore de Estados Unidos.",
+    "fact": "It is named after the Lawrence Livermore National Laboratory in the United States."
+  },
+  "117": {
+    "uses": "Su nombre viene de Tennessee; se sintetizó usando berkelio producido en Oak Ridge.",
+    "fact": "It is named after Tennessee; it was synthesized using berkelium produced at Oak Ridge."
+  },
+  "118": {
+    "uses": "Es el elemento más pesado conocido; su nombre honra al físico Yuri Oganessian, aún vivo cuando se lo bautizó.",
+    "fact": "It is the heaviest known element; it is named after physicist Yuri Oganessian, who was alive when it was named."
+  }
 }

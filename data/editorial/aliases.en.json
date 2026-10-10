@@ -1,14 +1,6 @@
 {
- "13": [
-  "aluminium"
- ],
- "55": [
-  "caesium"
- ],
- "16": [
-  "sulphur"
- ],
- "74": [
-  "wolfram"
- ]
+  "13": ["aluminium"],
+  "55": ["caesium"],
+  "16": ["sulphur"],
+  "74": ["wolfram"]
 }

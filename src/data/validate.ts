@@ -50,8 +50,7 @@ const FIELDS: Readonly<Record<keyof Element, Check>> = {
   covalentRadius: nullable(inRange(20, 300)),
   ionizationEnergy: nullable(inRange(3, 25)),
   electronAffinity: nullable(inRange(-1, 4)),
-  oxidationStates: (v) =>
-    Array.isArray(v) && v.every((n) => isInt(n) && (n as number) >= -5 && (n as number) <= 9),
+  oxidationStates: (v) => Array.isArray(v) && v.every((n) => isInt(n) && (n as number) >= -5 && (n as number) <= 9),
   phase: nullable(oneOf(PHASES)),
   predictedPhase: nullable(oneOf(PHASES)),
   meltingPoint: nullable(inRange(0.5, 4500)),
@@ -85,7 +84,8 @@ export interface Issue {
 export function validateElements(data: unknown): Issue[] {
   const issues: Issue[] = [];
   if (!Array.isArray(data)) return [{ z: null, field: '*', message: 'el dataset no es un array' }];
-  if (data.length !== 118) issues.push({ z: null, field: '*', message: `se esperaban 118 elementos, hay ${data.length}` });
+  if (data.length !== 118)
+    issues.push({ z: null, field: '*', message: `se esperaban 118 elementos, hay ${data.length}` });
 
   const seenPos = new Map<string, number>();
   const seenSym = new Map<string, number>();
