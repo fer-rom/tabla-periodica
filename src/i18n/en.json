@@ -3,7 +3,8 @@
     "title": "Interactive periodic table",
     "description": "All 118 elements with data verified against IUPAC, PubChem and NIST: heat maps, states by temperature, a comparison view and a molar mass calculator. Works offline.",
     "elementTitle": "{name} ({symbol}) — Periodic table",
-    "elementDescription": "{name}, atomic number {z}. {category}. Atomic mass {mass}. Electron configuration {config}."
+    "elementDescription": "{name}, atomic number {z}. {category}. Atomic mass {mass}. Electron configuration {config}.",
+    "openInTable": "Open in the periodic table"
   },
   "header": {
     "skip": "Skip to the table",

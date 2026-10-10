@@ -7,25 +7,26 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  check:
+  build:
+    name: Tests, build y deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: package.json
       - name: Instalar dependencias
-        run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
+        # Si package.json cambió y el lockfile todavía no se regeneró (workflow Lockfile), se instala sin él.
+        run: npm ci || npm install --no-audit --no-fund
       - name: Lint
         run: npm run lint
       - name: Formato
@@ -38,3 +39,50 @@ jobs:
         run: |
           npm run data:build
           git diff --exit-code -- src/data data/sources.json
+      - name: Build y presupuesto de rendimiento
+        run: npm run build
+      - name: Imágenes de vista previa (Open Graph)
+        run: |
+          npx playwright install --with-deps chromium
+          npm run og
+      - name: Publicar en GitHub Pages (rama gh-pages)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          cd dist
+          touch .nojekyll
+          echo "${GITHUB_SHA}" > version.txt
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "deploy: ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+  lighthouse:
+    name: Lighthouse (móvil)
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Esperar a que GitHub Pages publique este commit
+        run: |
+          for i in $(seq 1 40); do
+            if [ "$(curl -fsS "https://fer-rom.github.io/tabla-periodica/version.txt?t=$i" 2>/dev/null)" = "${GITHUB_SHA}" ]; then
+              sleep 20; exit 0
+            fi
+            sleep 15
+          done
+          echo "::warning::GitHub Pages no respondió a tiempo"
+      - name: Lighthouse CI
+        run: |
+          npx --yes @lhci/cli@0.15.1 collect \
+            --url="https://fer-rom.github.io/tabla-periodica/" \
+            --url="https://fer-rom.github.io/tabla-periodica/?lang=en" \
+            --numberOfRuns=3
+      - name: Resultados
+        run: npx --yes tsx scripts/lighthouse-summary.ts

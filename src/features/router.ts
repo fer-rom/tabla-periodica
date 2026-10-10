@@ -26,19 +26,29 @@ export function initRouter(): void {
     if (z !== store.get().selected) store.set({ selected: z });
   });
 
+  const show = (): void => {
+    const z = store.get().selected;
+    if (z === null || !store.get().bundle) return;
+    void import('./panel.ts').then((m) => {
+      m.showPanel(z);
+    });
+  };
   store.select(
     (s) => s.selected,
-    (z) => {
-      if (z !== null) {
-        void import('./panel.ts').then((m) => {
-          m.showPanel(z);
-        });
-      }
+    () => {
+      show();
       updateMeta();
     },
     { immediate: true },
   );
-  store.select((s) => s.bundle, updateMeta);
+  // Con /#Fe en la URL inicial, la ficha se abre en cuanto llegan los textos del idioma.
+  store.select(
+    (s) => s.bundle,
+    (_bundle, previous) => {
+      if (!previous) show();
+      updateMeta();
+    },
+  );
 }
 
 /** Abre la ficha de un elemento desde la tabla, la búsqueda o el comparador. */

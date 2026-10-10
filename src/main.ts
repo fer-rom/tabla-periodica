@@ -11,6 +11,7 @@ import { initInset } from './features/inset.ts';
 import { initialLang, initPrefs } from './features/prefs.ts';
 import { initRouter, openElement } from './features/router.ts';
 import { initToolbar } from './features/toolbar.ts';
+import { initOffline } from './features/offline.ts';
 import { store } from './state.ts';
 
 initGrid((z) => {
@@ -24,6 +25,7 @@ initPrefs();
 initToolbar();
 initInset();
 initRouter();
+initOffline();
 
 void loadBundle(initialLang()).then((bundle) => {
   store.set({ bundle });

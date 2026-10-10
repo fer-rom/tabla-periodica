@@ -19,13 +19,15 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "data:fetch": "tsx scripts/fetch-sources.ts",
-    "data:build": "tsx scripts/build-data.ts"
+    "data:build": "tsx scripts/build-data.ts",
+    "og": "tsx scripts/og-images.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.0",
     "@types/node": "^22.10.0",
     "eslint": "^10.0.0",
     "globals": "^16.0.0",
+    "playwright": "^1.56.0",
     "prettier": "^3.9.0",
     "tsx": "^4.19.0",
     "typescript": "~6.0.3",

@@ -3,7 +3,8 @@
     "title": "Tabla periódica interactiva",
     "description": "Los 118 elementos con datos verificados de IUPAC, PubChem y NIST: mapas de calor, estados según la temperatura, comparador y calculadora de masa molar. Funciona sin conexión.",
     "elementTitle": "{name} ({symbol}) — Tabla periódica",
-    "elementDescription": "{name}, número atómico {z}. {category}. Masa atómica {mass}. Configuración electrónica {config}."
+    "elementDescription": "{name}, número atómico {z}. {category}. Masa atómica {mass}. Configuración electrónica {config}.",
+    "openInTable": "Abrir en la tabla periódica"
   },
   "header": {
     "skip": "Saltar a la tabla",
