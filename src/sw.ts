@@ -3,7 +3,10 @@
  * así la app funciona sin conexión después de la primera visita.
  *
  * - Assets con hash, datos e idiomas: cache-first (nunca cambian para una misma versión).
- * - Navegaciones: se sirve el index.html de esta versión (coherente con sus assets).
+ * - Navegaciones: red primero (siempre la versión publicada); sin red, el index.html guardado.
+ * - La precarga ignora la caché HTTP: GitHub Pages cachea el HTML 10 minutos y una copia vieja
+ *   apuntaría a archivos con hash que ya no existen (la página se vería sin estilos).
+ * - Una versión nueva se activa sola, sin esperar a que se cierren las pestañas.
  * - Páginas para compartir (/e/fe/): red primero; sin red, redirige a la ficha dentro de la app.
  * - Cada deploy genera una lista distinta → versión nueva → la app ofrece «Actualizar».
  */
@@ -19,7 +22,13 @@ const SCOPE = new URL(sw.registration.scope);
 const INDEX = new URL('index.html', SCOPE).href;
 
 sw.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE.map((path) => new URL(path, SCOPE).href))));
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(CACHE);
+      await cache.addAll(PRECACHE.map((path) => new Request(new URL(path, SCOPE).href, { cache: 'reload' })));
+      await sw.skipWaiting();
+    })(),
+  );
 });
 
 sw.addEventListener('activate', (event) => {
@@ -79,13 +88,17 @@ sw.addEventListener('fetch', (event) => {
 });
 
 async function serveIndex(event: FetchEvent): Promise<Response> {
-  // El index se actualiza solo junto con su service worker: así nunca apunta a assets
-  // de otra versión que no estén guardados.
-  const cached = await caches.match(INDEX);
-  if (cached) return cached;
   try {
-    return await fetch(event.request);
+    const res = await fetch(event.request, { cache: 'no-cache' });
+    if (res.ok) {
+      const copy = res.clone();
+      event.waitUntil(caches.open(CACHE).then((c) => c.put(INDEX, copy)));
+    }
+    return res;
   } catch {
-    return new Response('Sin conexión', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+    const cached = await caches.match(INDEX);
+    return (
+      cached ?? new Response('Sin conexión', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+    );
   }
 }

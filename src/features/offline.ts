@@ -65,9 +65,12 @@ export function initOffline(): void {
       });
       render();
     });
+    // Si una versión nueva reemplaza a la que controlaba la página, se recarga una vez
+    // para que la página y sus archivos sean de la misma versión.
+    const hadController = navigator.serviceWorker.controller !== null;
     let reloading = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (reloading || state !== 'update') return;
+      if (reloading || !hadController) return;
       reloading = true;
       window.location.reload();
     });

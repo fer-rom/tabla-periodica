@@ -55,6 +55,7 @@ export function initPrefs(): void {
       root.dataset.lang = tr.lang;
       applyI18n(document, tr);
       syncUrl(tr.lang);
+      document.querySelector<HTMLAnchorElement>('.brand')?.setAttribute('href', `./?lang=${tr.lang}`);
     },
   );
 }
