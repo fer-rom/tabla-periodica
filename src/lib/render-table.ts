@@ -3,13 +3,29 @@
  * llegue completa en el HTML: el LCP no depende del JavaScript. En el navegador, el JS solo
  * engancha eventos y cambia atributos; nunca vuelve a generar estas celdas.
  */
-import type { Element, ElementTexts } from '../data/types.ts';
+import { CATEGORIES, type Element, type ElementTexts } from '../data/types.ts';
 import { createTranslator, type Lang, type Messages } from '../i18n/index.ts';
 import { escapeHtml, formatMass } from './format.ts';
 
 /** Fila CSS de la grilla: 1 = encabezados de grupo, 2–8 = períodos, 9 = separador, 10–11 = fila f. */
 export const cssRow = (y: number): number => y + 1;
 export const cssCol = (x: number): number => x + 1;
+
+function renderLegend(tr: ReturnType<typeof createTranslator>): string {
+  const items = CATEGORIES.map(
+    (cat) =>
+      `<li><button type="button" data-hl="${cat}" aria-pressed="false">` +
+      `<span class="swatch" data-cat="${cat}" aria-hidden="true"></span>` +
+      `<span data-i18n="categories.${cat}">${escapeHtml(tr.t(`categories.${cat}`))}</span></button></li>`,
+  ).join('');
+  return (
+    `<div class="legend-area" id="legend-area">` +
+    `<ul class="legend" data-i18n-attr="aria-label:legend.title" aria-label="${escapeHtml(tr.t('legend.title'))}">${items}` +
+    `<li class="legend-static"><span class="swatch" data-cat="nonmetal" data-hydrogen aria-hidden="true"></span>` +
+    `<span data-i18n="legend.hydrogen">${escapeHtml(tr.t('legend.hydrogen'))}</span></li></ul>` +
+    `<p class="inset-hint" data-i18n="legend.hint">${escapeHtml(tr.t('legend.hint'))}</p></div>`
+  );
+}
 
 export function cellLabel(tr: ReturnType<typeof createTranslator>, el: Element, name: string): string {
   return tr.t('grid.cellLabel', { name, symbol: el.symbol, z: el.z, category: tr.t(`categories.${el.category}`) });
@@ -64,8 +80,8 @@ export function renderTable(elements: readonly Element[], texts: ElementTexts, m
     `<span class="flabel" data-i18n="grid.actinides" style="grid-area:${cssRow(10)}/1/span 1/${cssCol(3)}">${escapeHtml(tr.t('grid.actinides'))}</span>`,
     // El hueco superior central (grupos 3–12, períodos 1–2) aloja la tarjeta del elemento o los controles de la vista.
     `<div class="inset" id="inset" style="grid-area:1/${cssCol(3)}/${cssRow(3)}/${cssCol(13)}"></div>`,
-    // Leyenda: siempre debajo de la tabla.
-    `<div class="legend-area" id="legend-area"></div>`,
+    // Leyenda: siempre debajo de la tabla. Va en el HTML para que no empuje el contenido al cargar.
+    renderLegend(tr),
   );
   out.push('</div>');
   return out.join('');

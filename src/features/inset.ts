@@ -44,17 +44,14 @@ export function initInset(): void {
           : renderTemperature(),
     );
   };
-  const renderLegendArea = (): void => {
-    if (store.get().bundle) legendRoot.replaceChildren(renderLegend());
-  };
+  // La leyenda viene prerenderizada: solo se engancha el clic (los textos los traduce applyI18n).
+  legendRoot.addEventListener('click', (ev) => {
+    const btn = (ev.target as Element).closest<HTMLButtonElement>('[data-hl]');
+    const cat = CATEGORIES.find((c) => c === btn?.dataset.hl);
+    if (cat) store.set((s) => ({ highlight: s.highlight === cat ? null : cat }));
+  });
   store.select((s) => s.view, render);
-  store.select(
-    (s) => s.bundle,
-    () => {
-      render();
-      renderLegendArea();
-    },
-  );
+  store.select((s) => s.bundle, render);
   store.select(
     (s) => s.preview,
     () => {
@@ -76,35 +73,6 @@ export function initInset(): void {
     },
   );
   store.select((s) => s.temperature, updateTemperature);
-}
-
-function renderLegend(): DocumentFragment {
-  const tr = translator();
-  const frag = document.createDocumentFragment();
-  const list = h('ul', { class: 'legend', 'aria-label': tr.t('legend.title') });
-  const hl = store.get().highlight;
-  for (const cat of CATEGORIES) {
-    const btn = h(
-      'button',
-      { type: 'button', 'data-hl': cat, 'aria-pressed': String(hl === cat) },
-      h('span', { class: 'swatch', 'data-cat': cat, 'aria-hidden': 'true' }),
-      tr.t(`categories.${cat}`),
-    );
-    btn.addEventListener('click', () => {
-      store.set((s) => ({ highlight: s.highlight === cat ? null : cat }));
-    });
-    list.append(h('li', {}, btn));
-  }
-  list.append(
-    h(
-      'li',
-      { class: 'legend-static' },
-      h('span', { class: 'swatch', 'data-cat': 'nonmetal', 'data-hydrogen': '', 'aria-hidden': 'true' }),
-      tr.t('legend.hydrogen'),
-    ),
-  );
-  frag.append(list, h('p', { class: 'inset-hint' }, tr.t('legend.hint')));
-  return frag;
 }
 
 /** Tarjeta resumen: los datos más consultados, en renglones, y un botón a la ficha completa. */

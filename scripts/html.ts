@@ -6,6 +6,8 @@
 import elementsJson from '../src/data/elements.json' with { type: 'json' };
 import textsEs from '../src/data/texts.es.json' with { type: 'json' };
 import es from '../src/i18n/es.json' with { type: 'json' };
+import en from '../src/i18n/en.json' with { type: 'json' };
+import textsEn from '../src/data/texts.en.json' with { type: 'json' };
 import type { Element } from '../src/data/types.ts';
 import { createTranslator, type MessageKey, type Params } from '../src/i18n/index.ts';
 import { escapeHtml } from '../src/lib/format.ts';
@@ -62,11 +64,40 @@ export function fillI18n(html: string): string {
   return out;
 }
 
+const trEn = createTranslator('en', en);
+
+/**
+ * El HTML se prerenderiza en español. Si la visita es en inglés, este script síncrono (al final
+ * del body, antes del primer pintado) aplica los textos en inglés que ya están a la vista,
+ * así los botones no cambian de ancho cuando llega el JavaScript (evita CLS).
+ */
+export function earlyEnglishScript(html: string): string {
+  const dict: Record<string, string> = {};
+  for (const m of html.matchAll(/data-i18n="([^"]+)"(?![^>]*data-i18n-params)/g)) {
+    const key = m[1] ?? '';
+    dict[key] = trEn.t(key as MessageKey);
+  }
+  for (const m of html.matchAll(/data-i18n-attr="([^"]+)"/g)) {
+    for (const pair of (m[1] ?? '').split(';')) {
+      const key = pair.split(':')[1];
+      if (key) dict[key] = trEn.t(key as MessageKey);
+    }
+  }
+  const names = Object.fromEntries(Object.entries(textsEn).map(([z, t]) => [z, t.name]));
+  const data = JSON.stringify({ t: dict, n: names }).replace(/</g, '\\u003c');
+  return `<script>(function(){var d=document.documentElement;if(d.lang!=='en')return;var D=${data};
+document.querySelectorAll('[data-i18n]').forEach(function(e){if(e.hasAttribute('data-i18n-params'))return;var v=D.t[e.getAttribute('data-i18n')];if(v!=null)e.textContent=v});
+document.querySelectorAll('[data-i18n-attr]').forEach(function(e){e.getAttribute('data-i18n-attr').split(';').forEach(function(p){var k=p.split(':');var v=D.t[k[1]];if(v!=null)e.setAttribute(k[0],v)})});
+document.querySelectorAll('.el').forEach(function(e){var n=e.querySelector('.nm'),m=e.querySelector('.ms');if(n&&D.n[e.dataset.z])n.textContent=D.n[e.dataset.z];if(m)m.textContent=m.textContent.replace(',','.')});
+})()</script>`;
+}
+
 export function transformIndex(html: string, vars: SiteVars): string {
   const table = renderTable(elementsJson as unknown as Element[], textsEs, es, 'es');
   const withVars = html
     .replaceAll('%SITE_URL%', vars.siteUrl)
     .replaceAll('%REPO_URL%', vars.repoUrl)
     .replaceAll('%SNAPSHOT_DATE%', vars.snapshotDate);
-  return fillI18n(withVars).replace('<!--ptable-->', table);
+  const html2 = fillI18n(withVars).replace('<!--ptable-->', table);
+  return html2.replace('<script type="module"', `${earlyEnglishScript(html2)}\n    <script type="module"`);
 }
